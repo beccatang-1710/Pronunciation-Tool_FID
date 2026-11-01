@@ -1772,15 +1772,35 @@ const GLOSSARY = {
   function playMp3(m, btn){
     stopAudio();
     const token = mp3Token;
-    const src = "brand_audio/" + state.accent + "/" + m.slug + "_" + state.accent + ".mp3";
-    mp3Player = new Audio(src);
+    // Resolve from the deployed site directory so this also works on GitHub
+    // Pages project sites (which live below /<repository-name>/).
+    const src = new URL(
+      "brand_audio/" + state.accent.toUpperCase() + "/" + m.slug + "_" + state.accent + ".mp3",
+      document.baseURI
+    ).href;
+    mp3Player = new Audio();
+    mp3Player.preload = "auto";
+    mp3Player.src = src;
     if(btn) btn.classList.add("playing");
     const clear = ()=>{ if(btn) btn.classList.remove("playing"); };
-    const fallback = ()=>{ clear(); speak(m[state.accent], btn); };
+    const reportFailure = (detail)=>{
+      if(token!==mp3Token) return;
+      clear();
+      const accentName = state.accent.toUpperCase();
+      setMessage(
+        "Studio " + accentName + " recording could not be played. Check that this file exists in " +
+        "brand_audio/" + state.accent.toUpperCase() + "/" + m.slug + "_" + state.accent +
+        ".mp3. No system-generated voice was substituted.",
+        "try"
+      );
+    };
     mp3Player.onended = ()=>{ if(token===mp3Token) clear(); };
-    mp3Player.onerror = ()=>{ if(token!==mp3Token) return; fallback(); };
+    mp3Player.onerror = ()=>reportFailure("load");
     const p = mp3Player.play();
-    if(p && p.catch) p.catch(err=>{ if(token!==mp3Token || (err && err.name==="AbortError")) return; fallback(); });
+    if(p && p.catch) p.catch(err=>{
+      if(token!==mp3Token || (err && err.name==="AbortError")) return;
+      reportFailure(err && err.name ? err.name : "playback");
+    });
   }
   function speak(text, btn, langOverride){
     if(!synth){ setMessage("Audio isn't supported in this browser.","try"); return; }
@@ -1795,6 +1815,10 @@ const GLOSSARY = {
     if(state.mode==="brands" && state.voiceMode==="native"){ const sp = brandSpeech(it); speak(sp.text, $("speak-button"), sp.lang); return; }
     const m = MP3_MAP[it.name];
     if(m){ playMp3(m, $("speak-button")); return; }
+    if(state.mode==="brands" && state.voiceMode==="english"){
+      setMessage("No studio recording is mapped for this brand yet. No system-generated voice was substituted.", "try");
+      return;
+    }
     speak(it.name, $("speak-button"));
   }
   $("speak-button").addEventListener("click", ()=>playEntry(current()));
