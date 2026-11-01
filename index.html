@@ -1762,10 +1762,10 @@ const GLOSSARY = {
       if (m) return m;
     }
 
-    // 3. Fallback to any Enhanced/Premium/Google voice or last non-blocked match
+    // 3. Use only an exact regional match. In particular, never substitute
+    // en-US for en-GB (or vice versa), because that defeats the accent toggle.
     return exactPool.find(v => /Google|Premium|Enhanced/i.test(v.name)) ||
-           exactPool[exactPool.length - 1] ||
-           pool.find(v => v.lang.toLowerCase().startsWith(lang.slice(0, 2).toLowerCase()));
+           exactPool[exactPool.length - 1] || null;
   }
   let mp3Player = null, mp3Token = 0;
   function stopAudio(){ mp3Token++; if(synth) synth.cancel(); if(mp3Player){ mp3Player.pause(); mp3Player.currentTime=0; } if(pronAudio){ pronAudio.pause(); pronAudio.currentTime=0; } $("speak-button").classList.remove("playing"); }
@@ -1804,12 +1804,33 @@ const GLOSSARY = {
   }
   function speak(text, btn, langOverride){
     if(!synth){ setMessage("Audio isn't supported in this browser.","try"); return; }
-    stopAudio(); const u = new SpeechSynthesisUtterance(text); let lang = langOverride || (state.accent==="uk"?"en-GB":"en-US");
+    stopAudio();
+    let lang = langOverride || (state.accent==="uk"?"en-GB":"en-US");
     let v = pickVoice(lang);
-    if(!v && lang.slice(0,2)!=="en"){ lang = state.accent==="uk"?"en-GB":"en-US"; text = current().name; u.text = text; v = pickVoice(lang); }
-    u.lang = lang; if(v) u.voice = v; u.rate = btn===$("speak-button") ? .92 : .98;
+
+    // For English terms, require the exact regional voice requested by the
+    // UK/US toggle. Do not let the browser silently use its default accent.
+    if(lang === "en-GB" || lang === "en-US"){
+      if(!v){
+        const region = lang === "en-GB" ? "UK" : "US";
+        setMessage("No English ("+region+") speech voice is available in this browser. Install or enable an English ("+region+") voice in your device's speech settings, then reload this page. The other accent will not be substituted.","try");
+        return;
+      }
+    } else if(!v && lang.slice(0,2)!=="en"){
+      lang = state.accent==="uk"?"en-GB":"en-US";
+      text = current().name;
+      v = pickVoice(lang);
+      if(!v){ setMessage("No English ("+(state.accent==="uk"?"UK":"US")+") speech voice is available. Enable the corresponding voice in your device's speech settings.","try"); return; }
+    }
+
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = lang;
+    u.voice = v;
+    u.rate = btn===$("speak-button") ? .92 : .98;
     if(btn) { btn.classList.add("playing"); u.onend=u.onerror=()=>btn.classList.remove("playing"); }
     synth.speak(u);
+    const region = lang === "en-GB" ? "UK" : lang === "en-US" ? "US" : "";
+    if(region && state.mode === "terms") setMessage("Using an English ("+region+") voice. The IPA shown is the reference; browser speech may still vary slightly by voice.");
   }
   function playEntry(it){
     if(state.mode==="brands" && state.voiceMode==="native"){ const sp = brandSpeech(it); speak(sp.text, $("speak-button"), sp.lang); return; }
