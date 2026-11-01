@@ -1,0 +1,2152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#103b53" />
+<meta name="description" content="Hear, understand, and practise fashion vocabulary and brand names." />
+<title>Fashion Glossary · HKDI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#103b53; --navy-2:#0b2a3b; --teal:#1f7a8c; --teal-soft:#e4f1f4; --gold:#d9a441; --gold-soft:#fbf3e1;
+  --bg:#f5f7f8; --card:#fff; --ink:#14232d; --muted:#5b6b75; --line:#dde4e8; --ok:#1d7a4d; --ok-soft:#e3f4ea; --warn:#a15c07;
+  --radius:14px; --shadow:0 1px 2px rgba(16,59,83,.06),0 6px 20px rgba(16,59,83,.06);
+  --sans:"DM Sans","Noto Sans","Segoe UI",system-ui,sans-serif; --serif:"Source Serif 4",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* top bar */
+.topbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px clamp(16px,4vw,40px);gap:16px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+.brand-mark{background:var(--gold);color:var(--navy-2);font-weight:700;font-size:1.05rem;letter-spacing:.08em;padding:6px 14px;border-radius:8px}
+.brand-name{font-size:.88rem;line-height:1.25;font-weight:500;opacity:.95}
+.topnav{display:flex;align-items:center;gap:6px}
+.nav-link{color:#fff;text-decoration:none;font-size:.92rem;padding:7px 12px;border-radius:999px;opacity:.85}
+.nav-link:hover,.nav-link.active{background:rgba(255,255,255,.14);opacity:1}
+.study-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;border:1px solid rgba(255,255,255,.4);padding:3px 9px;border-radius:999px;margin-left:6px}
+
+.page-shell{max-width:1180px;margin:0 auto;padding:28px clamp(16px,4vw,40px) 56px}
+
+/* intro */
+.page-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.breadcrumb{display:flex;gap:8px;font-size:.82rem;color:var(--muted);margin-bottom:6px}
+h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;margin:0 0 6px;color:var(--navy)}
+.intro-copy p{margin:0;color:var(--muted);font-size:1.05rem}
+.progress-card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 16px;box-shadow:var(--shadow)}
+.progress-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-size:1.3rem}
+.progress-card strong{font-size:1.4rem;display:block;line-height:1.1;color:var(--navy)}
+.progress-card small{color:var(--muted);font-size:.78rem}
+.audio-tip{font-size:.8rem;line-height:1.55;color:var(--muted);max-width:680px;margin:10px 0 0}
+.audio-tip strong{color:var(--navy);font-weight:600}
+
+/* home tabs */
+.home-tabs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+.home-tab{display:flex;align-items:center;gap:16px;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);transition:border-color .15s,transform .15s,background .15s}
+.home-tab:hover{border-color:var(--teal);transform:translateY(-1px)}
+.home-tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.tab-icon{display:grid;place-items:center;flex:none;width:52px;height:52px;border-radius:12px;background:var(--teal-soft);color:var(--teal);font-size:1.7rem}
+.home-tab[aria-selected="true"] .tab-icon{background:rgba(255,255,255,.14);color:var(--gold)}
+.tab-text strong{display:block;font-family:var(--serif);font-size:1.25rem;line-height:1.2}
+.tab-text span{display:block;font-size:.88rem;color:var(--muted);margin-top:2px}
+.home-tab[aria-selected="true"] .tab-text span{color:rgba(255,255,255,.8)}
+.tab-count{margin-left:auto;font-weight:700;font-size:.82rem;background:var(--gold-soft);color:var(--warn);padding:4px 11px;border-radius:999px;white-space:nowrap}
+.home-tab[aria-selected="true"] .tab-count{background:var(--gold);color:var(--navy-2)}
+
+/* workspace */
+.workspace{display:grid;grid-template-columns:340px 1fr;gap:20px;align-items:start}
+.term-browser,.lesson{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.term-browser{padding:18px;position:sticky;top:16px}
+.browser-heading{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.browser-heading h2{font-size:1.1rem;margin:0;color:var(--navy)}
+.count-label{font-size:.82rem;color:var(--muted)}
+.search-box{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:#fbfcfc;color:var(--muted)}
+.search-box:focus-within{border-color:var(--teal);background:#fff}
+.search-box input{flex:1;border:0;outline:0;background:none;min-width:0;color:var(--ink)}
+.search-box kbd{font-size:.72rem;border:1px solid var(--line);border-radius:5px;padding:0 6px;background:#fff}
+.filter-row{margin-top:10px}
+.filter-row select{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:#fbfcfc}
+.term-list{margin-top:12px;max-height:56vh;overflow:auto;display:flex;flex-direction:column;gap:3px;padding-right:2px}
+.term-item{display:flex;align-items:center;justify-content:space-between;gap:8px;border:0;background:none;text-align:left;padding:9px 11px;border-radius:9px;border-left:3px solid transparent}
+.term-item:hover{background:var(--teal-soft)}
+.term-item[aria-selected="true"]{background:var(--navy);color:#fff;border-left-color:var(--gold)}
+.term-item .tick{display:none;color:var(--ok);font-size:1rem}
+.term-item.done .tick{display:inline-block}
+.term-item[aria-selected="true"].done .tick{color:#7fe0ad}
+.term-item .tag{font-size:.72rem;color:var(--muted)}
+.term-item[aria-selected="true"] .tag{color:rgba(255,255,255,.75)}
+.term-meta{display:flex;align-items:center;gap:8px}
+.empty{padding:18px 8px;color:var(--muted);font-size:.92rem}
+.list-footnote{font-size:.78rem;color:var(--muted);margin:12px 2px 0}
+
+/* lesson */
+.lesson{padding:clamp(20px,3vw,34px)}
+.lesson-topline{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:.74rem;font-weight:700;letter-spacing:.1em;color:var(--teal)}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--teal);margin-right:8px}
+.term-index{color:var(--muted);font-weight:500;letter-spacing:0}
+.word-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:12px 0 6px}
+.word-heading h2{font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0;color:var(--navy);overflow-wrap:anywhere}
+.ipa-line{display:flex;align-items:center;gap:10px;margin:8px 0 0;font-size:1.15rem;flex-wrap:wrap}
+.ipa-label{font-size:.7rem;font-weight:700;letter-spacing:.08em;background:var(--teal-soft);color:var(--teal);padding:2px 8px;border-radius:6px}
+.round-audio{display:grid;place-items:center;flex:none;width:64px;height:64px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:1.7rem;box-shadow:0 4px 14px rgba(16,59,83,.3);transition:transform .15s,background .15s}
+.round-audio:hover{background:var(--teal);transform:scale(1.05)}
+.round-audio.playing{background:var(--gold);color:var(--navy-2)}
+
+.accent-toggle{display:inline-flex;background:#eef2f4;border-radius:999px;padding:3px;gap:2px}
+.accent-toggle button{border:0;background:none;padding:4px 14px;border-radius:999px;font-size:.82rem;font-weight:600;color:var(--muted)}
+.accent-toggle button[aria-pressed="true"]{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+
+.block{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.block h3{font-size:.76rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:0 0 6px}
+.block p{margin:0;font-size:1.08rem}
+.example-block{background:var(--gold-soft);border:0;border-radius:12px;padding:16px 18px}
+.example-heading{display:flex;justify-content:space-between;align-items:center}
+.example-tag{font-size:.68rem;font-weight:700;letter-spacing:.1em;color:var(--warn)}
+.example-block p{font-family:var(--serif);font-size:1.12rem}
+.text-action,.link-action{display:inline-flex;align-items:center;gap:6px;margin-top:10px;border:0;background:none;color:var(--teal);font-weight:600;padding:4px 0;text-decoration:none}
+.text-action:hover,.link-action:hover{text-decoration:underline}
+.country-badge{display:inline-flex;align-items:center;gap:8px;background:var(--teal-soft);color:var(--navy);font-weight:600;border-radius:999px;padding:5px 14px;font-size:1rem}
+.pexels-btn{display:inline-flex;align-items:center;gap:8px;margin-top:4px;background:var(--navy);color:#fff;text-decoration:none;padding:10px 18px;border-radius:10px;font-weight:600}
+.pexels-btn:hover{background:var(--teal)}
+.intro-tools{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.lang-tool{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:8px 12px;box-shadow:var(--shadow)}
+.lang-tool .lang-label{font-size:.78rem;color:var(--muted);line-height:1.2}
+.lang-tool .accent-toggle button{padding:5px 13px}
+.zh{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",var(--sans);color:var(--navy)}
+.zh:lang(zh-Hans){font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei","Heiti SC",var(--sans)}
+.zh-title{font-size:clamp(1.25rem,3vw,1.7rem);font-weight:600;margin:4px 0 0;line-height:1.3}
+.zh-block{margin-top:10px;padding:10px 14px;border-left:3px solid var(--teal);background:var(--teal-soft);border-radius:0 10px 10px 0;font-size:1.02rem;line-height:1.75}
+.zh-inline{margin-left:10px;font-weight:600;color:var(--navy)}
+.term-item .zh-sub{display:block;font-size:.8rem;color:var(--muted);line-height:1.3}
+.term-item[aria-selected="true"] .zh-sub{color:rgba(255,255,255,.8)}
+.voice-note{font-size:.85rem;color:var(--muted);margin:8px 0 0}.voice-note.warn{color:var(--warn)}
+.pexels-note{font-size:.85rem!important;color:var(--muted);margin-top:8px!important}
+
+/* practice */
+.practice-panel{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px;padding:16px 18px;border:1.5px dashed #b6c6cf;border-radius:12px;background:#fafcfd}
+.practice-copy{display:flex;align-items:center;gap:12px}
+.practice-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--teal-soft);color:var(--teal);font-size:1.3rem}
+.practice-copy h3{margin:0;font-size:1rem;color:var(--navy)}
+.practice-copy p{margin:0;font-size:.92rem;color:var(--muted)}
+.practice-copy p.good{color:var(--ok);font-weight:600}
+.practice-copy p.try{color:var(--warn);font-weight:600}
+.record-button{display:inline-flex;align-items:center;gap:10px;border:0;background:var(--teal);color:#fff;font-weight:600;padding:11px 20px;border-radius:999px}
+.record-button:hover{background:var(--navy)}
+.record-button.listening{background:#c0392b}
+.mic-dot{width:10px;height:10px;border-radius:50%;background:#fff}
+.record-button.listening .mic-dot{animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.25;transform:scale(1.4)}}
+.practice-hint{flex-basis:100%;margin:0;font-size:.9rem;line-height:1.55;color:var(--navy);background:var(--teal-soft);border-radius:10px;padding:10px 14px}
+.practice-hint strong{font-weight:700}
+.practice-tools{flex-basis:100%;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.practice-tools .text-action{margin-top:0}
+.practice-tools .rec-on{color:#c0392b}
+.level{flex-basis:100%;height:8px;border-radius:99px;background:#e5ebee;overflow:hidden}
+.level span{display:block;height:100%;width:0;background:var(--teal);transition:width .08s}
+#playback{flex-basis:100%;width:100%;height:40px}
+.trouble{flex-basis:100%;font-size:.88rem;color:var(--muted)}
+.trouble summary{cursor:pointer;font-weight:600;color:var(--teal)}
+.trouble ul{margin:8px 0 0;padding-left:20px}
+.trouble li{margin:3px 0}
+.speech-support{flex-basis:100%;margin:0;font-size:.85rem;color:var(--warn)}
+
+.lesson-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:24px}
+.mark-button{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ok);background:#fff;color:var(--ok);font-weight:600;padding:10px 18px;border-radius:10px}
+.mark-button .check-icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2}
+.mark-button.done{background:var(--ok);color:#fff}
+.step-controls{display:flex;gap:8px}
+.step-controls button{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:1.3rem;color:var(--navy)}
+.step-controls button:hover{border-color:var(--teal);background:var(--teal-soft)}
+
+.site-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:18px clamp(16px,4vw,40px);background:var(--navy-2);color:rgba(255,255,255,.75);font-size:.85rem}
+[hidden]{display:none!important}
+
+@media (max-width:900px){
+  .workspace{grid-template-columns:1fr}
+  .term-browser{position:static}
+  .term-list{max-height:260px}
+}
+@media (max-width:560px){
+  .home-tabs{grid-template-columns:1fr}
+  .brand-name{display:none}
+  .study-label{display:none}
+  .tab-count{display:none}
+  .round-audio{width:54px;height:54px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+.browser-tip { display: inline-block; font-size: .84rem; color: var(--navy); background: var(--teal-soft); padding: 6px 12px; border-radius: 8px; margin: 10px 0 0; line-height: 1.4; }
+.block p { max-width: 68ch; line-height: 1.65; }
+.accent-toggle button { min-height: 36px; padding: 6px 16px; }
+.term-item { min-height: 44px; padding: 10px 12px; }
+@media (max-width: 900px) {
+  .page-shell { padding: 18px 16px 40px; }
+  .workspace { display: flex; flex-direction: column; gap: 16px; }
+  .lesson { order: 1; width: 100%; padding: 20px 18px; }
+  .term-browser { order: 2; width: 100%; position: static; }
+  .term-list { max-height: 320px; }
+}
+@media (max-width: 560px) {
+  .page-intro { flex-direction: column; align-items: stretch; gap: 12px; }
+  .intro-tools { width: 100%; justify-content: space-between; }
+  .word-heading { align-items: flex-start; }
+  .word-heading h2 { font-size: 1.85rem; }
+  .practice-panel { flex-direction: column; align-items: stretch; padding: 14px; gap: 12px; }
+  .record-button { width: 100%; justify-content: center; padding: 13px 20px; font-size: 1rem; }
+  .practice-tools { justify-content: space-between; width: 100%; }
+  .lesson-footer { flex-direction: column-reverse; align-items: stretch; gap: 12px; }
+  .mark-button { width: 100%; justify-content: center; padding: 12px; }
+  .step-controls { width: 100%; justify-content: space-between; }
+  .step-controls button { flex: 1; border-radius: 10px; height: 46px; }
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="HKDI home">
+    <span class="brand-mark">HKDI</span>
+  </a>
+  <nav class="topnav" aria-label="Main navigation">
+    <a class="nav-link active" href="#glossary">Glossary</a>
+    <a class="nav-link" href="#practice">Practice</a>
+    <span class="study-label">Self-study</span>
+  </nav>
+</header>
+
+<main id="glossary" class="page-shell">
+  <section class="page-intro" aria-labelledby="page-title">
+    <div class="intro-copy">
+      <div class="breadcrumb"><span>Learning resources</span><span aria-hidden="true">/</span><span>Fashion</span></div>
+      <h1 id="page-title">Fashion glossary</h1>
+      <p>Listen to the pronunciation, read the meaning, and practise speaking.</p>
+    </div>
+    <div class="intro-tools">
+      <div class="lang-tool">
+        <span class="lang-label">Chinese<br />translation</span>
+        <div class="accent-toggle" id="zh-toggle" role="group" aria-label="Show Chinese translation beneath the English text">
+          <button type="button" data-zh="off" aria-pressed="true">Off</button>
+          <button type="button" data-zh="tc" aria-pressed="false" lang="zh-Hant">繁體</button>
+          <button type="button" data-zh="sc" aria-pressed="false" lang="zh-Hans">简体</button>
+        </div>
+      </div>
+      <div class="progress-card" aria-live="polite">
+        <span class="progress-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5 9.4 17 19 7.5"/></svg></span>
+        <span><strong id="progress-count">0</strong><small id="progress-label">practised</small></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="home-tabs" role="tablist" aria-label="Glossary sections">
+    <button class="home-tab" role="tab" id="tab-terms" data-mode="terms" aria-selected="true" aria-controls="panel">
+      <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 7l3 3v10h10V10l3-3-8-4Z"/><path d="M9 4.5c.6 1.7 1.7 2.5 3 2.5s2.4-.8 3-2.5"/></svg></span>
+      <span class="tab-text"><strong>Common fashion terms</strong><span>Fabrics, techniques and style vocabulary</span></span>
+      <span class="tab-count" id="count-terms"></span>
+    </button>
+    <button class="home-tab" role="tab" id="tab-brands" data-mode="brands" aria-selected="false" aria-controls="panel">
+      <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9h18l-1.5-5h-15L3 9Z"/><path d="M5 9v11h14V9"/><path d="M10 20v-6h4v6"/></svg></span>
+      <span class="tab-text"><strong>Brand names</strong><span>Fashion houses and how to say them</span></span>
+      <span class="tab-count" id="count-brands"></span>
+    </button>
+  </div>
+
+  <section id="panel" class="workspace" role="tabpanel" aria-label="Glossary practice">
+    <aside class="term-browser" aria-label="Choose an entry">
+      <div class="browser-heading"><h2 id="browser-title">Vocabulary</h2><span id="term-total" class="count-label"></span></div>
+      <label class="search-box" for="term-search">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+        <input id="term-search" type="search" placeholder="Find a term" aria-label="Search" autocomplete="off" />
+        <kbd>/</kbd>
+      </label>
+      <div class="filter-row" id="country-filter-row" hidden>
+        <select id="country-filter" aria-label="Filter brands by country of origin"></select>
+      </div>
+      <div id="term-list" class="term-list" role="listbox" aria-label="Entries"></div>
+      <p class="list-footnote">Select an entry to hear it and practise saying it.</p>
+    </aside>
+
+    <article class="lesson" aria-live="polite">
+      <div class="lesson-topline"><span><span class="live-dot"></span><span id="lesson-label">WORD STUDY</span></span><span id="selected-index" class="term-index"></span></div>
+      <div class="word-heading">
+        <div>
+          <h2 id="term-title">Loading…</h2>
+          <p id="zh-title" class="zh zh-title" hidden></p>
+          <p class="ipa-line"><span class="ipa-label" id="ipa-label">UK IPA</span><span id="term-ipa">—</span></p>
+        </div>
+        <button id="speak-button" class="round-audio" type="button" aria-label="Hear pronunciation" title="Hear pronunciation">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>
+        </button>
+      </div>
+
+      <div style="margin-top:10px"><div class="accent-toggle" id="accent-toggle" role="group" aria-label="Accent">
+        <button type="button" data-accent="uk" aria-pressed="true">UK</button>
+        <button type="button" data-accent="us" aria-pressed="false">US</button>
+      </div></div>
+
+      <p class="browser-tip"><strong>Best browser:</strong> Use <strong>Edge</strong> or <strong>Chrome</strong> on a computer, or <strong>Safari</strong> on iPhone/iPad, for the clearest voices and mic check.</p>
+
+      <!-- term view -->
+      <div id="term-view">
+        <section class="block" aria-labelledby="meaning-label"><h3 id="meaning-label">Meaning</h3><p id="term-meaning"></p><p id="zh-meaning" class="zh zh-block" hidden></p></section>
+        <section class="block example-block" aria-labelledby="example-label">
+          <div class="example-heading"><h3 id="example-label">In a sentence</h3><span class="example-tag">EXAMPLE</span></div>
+          <p id="term-example"></p>
+          <p id="zh-example" class="zh zh-block" hidden></p>
+          <button id="example-audio" class="text-action" type="button">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg>Hear example
+          </button>
+        </section>
+      </div>
+
+      <!-- brand view -->
+      <div id="brand-view" hidden>
+        <section class="block" aria-labelledby="voice-label"><h3 id="voice-label">Audio voice</h3>
+          <div class="accent-toggle" id="voice-toggle" role="group" aria-label="Voice for brand audio">
+            <button type="button" data-voice="native" aria-pressed="false">Original language</button>
+            <button type="button" data-voice="english" aria-pressed="true">English (matches IPA)</button>
+          </div>
+          <p class="voice-note" id="voice-note"></p>
+        </section>
+        <section class="block" aria-labelledby="origin-label"><h3 id="origin-label">Country of origin</h3><span class="country-badge"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="brand-country"></span></span><span id="zh-country" class="zh zh-inline" hidden></span></section>
+        <section class="block" aria-labelledby="visual-label"><h3 id="visual-label">See the brand</h3>
+          <a id="pexels-link" class="pexels-btn" href="#" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-5-5-8 8"/></svg>Browse images on Pexels</a>
+          <p class="pexels-note">Opens Pexels in a new tab to show examples of this brand's style.</p>
+        </section>
+      </div>
+
+      <section id="practice" class="practice-panel" aria-labelledby="practice-title">
+        <div class="practice-copy"><span class="practice-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="13" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3m-4 0h8"/></svg></span>
+          <span><h3 id="practice-title">Your turn</h3><p id="practice-message">Say the word aloud and check your pronunciation.</p></span></div>
+        <button id="record-button" class="record-button" type="button"><span class="mic-dot"></span><span id="record-label">Start speaking</span></button>
+        <p class="practice-hint"><strong>How to practise:</strong> 1. Tap the speaker to listen. &nbsp;2. Tap <em>Start speaking</em> and say the word clearly. &nbsp;3. Use <em>Record &amp; compare</em> to hear your own voice.</p>
+        <div class="practice-tools">
+          <button id="mic-test" class="text-action" type="button"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h3l3-7 4 14 3-7h5"/></svg>Test microphone</button>
+          <button id="shadow-button" class="text-action" type="button"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg><span>Record &amp; compare</span></button>
+        </div>
+        <div class="level" id="level-wrap" hidden><span id="level-bar"></span></div>
+        <audio id="pron-audio" preload="auto"></audio>
+        <audio id="playback" controls hidden></audio>
+        <p id="speech-support" class="speech-support" hidden></p>
+        <details class="trouble"><summary>Speech not detected? Try these</summary>
+          <ul>
+            <li>Use the latest Chrome, Edge or Safari. Firefox and iPhone/iPad browsers other than Safari can't check speech.</li>
+            <li>Allow microphone access when your browser asks. If you blocked it, re-enable it in the site settings and reload.</li>
+            <li>Speech checking uses your browser's online speech service, so you need an internet connection.</li>
+            <li>Choose the right microphone in your device's sound settings, use a quiet room, and speak one word clearly just after tapping.</li>
+            <li>Hosting the page on https (rather than opening the file directly) makes microphone permission more reliable.</li>
+            <li>Brand names from other languages are hard for any recogniser, so a near-miss is normal. Use “Record &amp; compare” to judge by ear.</li>
+          </ul>
+        </details>
+      </section>
+
+      <div class="lesson-footer">
+        <button id="mark-button" class="mark-button" type="button"><svg class="check-icon" aria-hidden="true" viewBox="0 0 20 20"><path d="m4.5 10.5 3.3 3.2 7.7-7.5"/></svg><span>Mark as practised</span></button>
+        <div class="step-controls">
+          <button id="previous-button" type="button" aria-label="Previous"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m14.5 5-7 7 7 7"/></svg></button>
+          <button id="next-button" type="button" aria-label="Next"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9.5 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+<footer class="site-footer"><span>Department of Communication Design</span><span>Learning through language</span></footer>
+
+<script>
+/* Data generated from "LTDC - Glossory List FID.xlsx" (Sheet1) */
+const GLOSSARY = {
+ "terms": [
+  {
+   "name": "Accessories",
+   "ipaUK": "/əkˈses.ə.riːz/",
+   "ipaUS": "/əkˈses.ɚ.iːz/",
+   "meaning": "Items worn or carried with clothing, such as bags, belts, hats, or jewellery.",
+   "example": "The stylist paired the tailored suit with leather accessories to add contrast without distracting from its clean silhouette.",
+   "nameTC": "配飾",
+   "meaningTC": "與服裝搭配佩戴或攜帶的物品，例如包包、腰帶、帽子或珠寶。",
+   "exampleTC": "造型師以皮革配飾搭配剪裁俐落的西裝，增添對比感，又不會搶走簡潔輪廓的風采。",
+   "nameSC": "配饰",
+   "meaningSC": "与服装搭配佩戴或携带的物品，例如包包、腰带、帽子或珠宝。",
+   "exampleSC": "造型师以皮革配饰搭配剪裁利落的西装，增添对比感，又不会抢走简洁轮廓的风采。"
+  },
+  {
+   "name": "Aesthetic",
+   "ipaUK": "/esˈθet.ɪk/; /iːsˈθet.ɪk/",
+   "ipaUS": "/esˈθet̬.ɪk/",
+   "meaning": "Concerned with beauty or the visual qualities and style of something.",
+   "example": "For the campaign, the design team chose a minimal aesthetic with neutral colours and uncluttered styling.",
+   "nameTC": "美學；審美的",
+   "meaningTC": "與美或事物的視覺特質和風格有關的。",
+   "exampleTC": "在這次宣傳活動中，設計團隊選用了以中性色調和簡潔造型為主的極簡美學。",
+   "nameSC": "美学；审美的",
+   "meaningSC": "与美或事物的视觉特质和风格有关的。",
+   "exampleSC": "在这次宣传活动中，设计团队选用了以中性色调和简洁造型为主的极简美学。"
+  },
+  {
+   "name": "Algorithm",
+   "ipaUK": "/ˈæl.ɡə.rɪ.ðəm/",
+   "ipaUS": "/ˈæl.ɡə.rɪ.ðəm/",
+   "meaning": "A set of rules or steps used by a computer to perform a task, such as recommending products.",
+   "example": "The retailer adjusted its recommendation algorithm to suggest outfits based on each shopper’s preferred colours and sizes.",
+   "nameTC": "演算法",
+   "meaningTC": "電腦用來執行任務（例如推薦商品）的一組規則或步驟。",
+   "exampleTC": "零售商調整了推薦演算法，依據每位顧客偏好的顏色和尺寸來推薦穿搭。",
+   "nameSC": "算法",
+   "meaningSC": "电脑用来执行任务（例如推荐商品）的一组规则或步骤。",
+   "exampleSC": "零售商调整了推荐算法，依据每位顾客偏好的颜色和尺寸来推荐穿搭。"
+  },
+  {
+   "name": "Appliqué",
+   "ipaUK": "/əˈpliː.keɪ/",
+   "ipaUS": "/ˈæp.lə.keɪ/",
+   "meaning": "A decorative piece of fabric attached to another fabric, usually by stitching.",
+   "example": "The student added a floral appliqué to the denim jacket to create a focal point on the back panel.",
+   "nameTC": "貼布繡",
+   "meaningTC": "通常以縫線固定在另一塊布料上的裝飾性布片。",
+   "exampleTC": "學生在牛仔外套上加了一朵花形貼布繡，在背部打造視覺焦點。",
+   "nameSC": "贴布绣",
+   "meaningSC": "通常以缝线固定在另一块布料上的装饰性布片。",
+   "exampleSC": "学生在牛仔外套上加了一朵花形贴布绣，在背部打造视觉焦点。"
+  },
+  {
+   "name": "Armoury",
+   "ipaUK": "/ˈɑː.mə.ri/",
+   "ipaUS": "/ˈɑːr.mɚ.i/",
+   "meaning": "A collection of weapons or protective armour; in costume contexts, armour and related equipment.",
+   "example": "For the stage collection, the designer developed a visual armoury of metallic shoulder pieces and protective-looking accessories.",
+   "nameTC": "盔甲庫；武備",
+   "meaningTC": "武器或防護盔甲的收藏；在服裝情境中，指盔甲及相關裝備。",
+   "exampleTC": "在舞台服裝系列中，設計師打造出一套視覺上的「盔甲庫」，包括金屬肩飾和具防護感的配件。",
+   "nameSC": "盔甲库；武备",
+   "meaningSC": "武器或防护盔甲的收藏；在服装情境中，指盔甲及相关装备。",
+   "exampleSC": "在舞台服装系列中，设计师打造出一套视觉上的「盔甲库」，包括金属肩饰和具防护感的配件。"
+  },
+  {
+   "name": "Atmospherics",
+   "ipaUK": "/ˌæt.məsˈfer.ɪks/",
+   "ipaUS": "/ˌæt.məsˈfɪr.ɪks/",
+   "meaning": "In retail, the mood or sensory impression created by a store or display; a fashion-retail application of the word.",
+   "example": "Warm lighting, pale wood, and soft music shaped the boutique’s atmospherics and made the collection feel intimate.",
+   "nameTC": "空間氛圍",
+   "meaningTC": "在零售業中，指商店或陳列所營造的氣氛或感官印象；是這個詞在時尚零售領域的應用。",
+   "exampleTC": "溫暖的燈光、淺色木質和輕柔的音樂塑造了精品店的空間氛圍，讓整個系列感覺親切。",
+   "nameSC": "空间氛围",
+   "meaningSC": "在零售业中，指商店或陈列所营造的气氛或感官印象；是这个词在时尚零售领域的应用。",
+   "exampleSC": "温暖的灯光、浅色木质和轻柔的音乐塑造了精品店的空间氛围，让整个系列感觉亲切。"
+  },
+  {
+   "name": "Avant-garde",
+   "ipaUK": "/ˌæv.ɑ̃ːˈɡɑːd/",
+   "ipaUS": "/ˌæv.ɑ̃ːˈɡɑːrd/",
+   "meaning": "Very original, experimental, or unconventional in style; in fashion, designs that challenge current conventions.",
+   "example": "The avant-garde collection used sculptural shapes and unexpected materials to challenge familiar ideas of eveningwear.",
+   "nameTC": "前衛",
+   "meaningTC": "極具原創性、實驗性或打破常規的風格；在時尚領域，指挑戰現有慣例的設計。",
+   "exampleTC": "這個前衛系列以雕塑感的造型和出人意料的材質，挑戰人們對晚禮服的既有印象。",
+   "nameSC": "前卫",
+   "meaningSC": "极具原创性、实验性或打破常规的风格；在时尚领域，指挑战现有惯例的设计。",
+   "exampleSC": "这个前卫系列以雕塑感的造型和出人意料的材质，挑战人们对晚礼服的既有印象。"
+  },
+  {
+   "name": "Avatar",
+   "ipaUK": "/ˈæv.ə.tɑːr/",
+   "ipaUS": "/ˈæv.ə.tɑːr/",
+   "meaning": "A digital image or character that represents a person online.",
+   "example": "The virtual fashion show let visitors dress their avatars in digital versions of the collection.",
+   "nameTC": "虛擬化身",
+   "meaningTC": "在網路上代表一個人的數位圖像或角色。",
+   "exampleTC": "虛擬時裝秀讓參觀者為自己的虛擬化身穿上該系列的數位版服裝。",
+   "nameSC": "虚拟化身",
+   "meaningSC": "在网络上代表一个人的数字图像或角色。",
+   "exampleSC": "虚拟时装秀让参观者为自己的虚拟化身穿上该系列的数字版服装。"
+  },
+  {
+   "name": "Beading",
+   "ipaUK": "/ˈbiː.dɪŋ/",
+   "ipaUS": "/ˈbiː.dɪŋ/",
+   "meaning": "The decoration of fabric or clothing with small beads.",
+   "example": "The hand beading along the neckline caught the light while keeping the rest of the gown understated.",
+   "nameTC": "珠飾",
+   "meaningTC": "以小珠子裝飾布料或服裝。",
+   "exampleTC": "領口的手工珠飾在光線下閃閃發亮，同時讓禮服其餘部分保持低調。",
+   "nameSC": "珠饰",
+   "meaningSC": "以小珠子装饰布料或服装。",
+   "exampleSC": "领口的手工珠饰在光线下闪闪发亮，同时让礼服其余部分保持低调。"
+  },
+  {
+   "name": "Bustier",
+   "ipaUK": "/ˈbʌs.ti.eɪ/",
+   "ipaUS": "/ˈbuː.sti.eɪ/",
+   "meaning": "A close-fitting, often boned garment that covers the torso and supports or shapes the bust.",
+   "example": "She layered a structured bustier over a white shirt to create a modern evening look.",
+   "nameTC": "馬甲式胸衣",
+   "meaningTC": "貼身、通常帶有鋼骨的服裝，覆蓋軀幹並支撐或塑造胸部線條。",
+   "exampleTC": "她在白襯衫外層疊穿一件結構感十足的馬甲式胸衣，打造現代感的晚宴造型。",
+   "nameSC": "马甲式胸衣",
+   "meaningSC": "贴身、通常带有钢骨的服装，覆盖躯干并支撑或塑造胸部线条。",
+   "exampleSC": "她在白衬衫外层叠穿一件结构感十足的马甲式胸衣，打造现代感的晚宴造型。"
+  },
+  {
+   "name": "Chambray",
+   "ipaUK": "/ˈʃæm.breɪ/",
+   "ipaUS": "/ˈʃæm.breɪ/",
+   "meaning": "A lightweight, plain-weave fabric, usually cotton, with a coloured lengthwise yarn and a white crosswise yarn.",
+   "example": "The designer used lightweight chambray for a relaxed shirt in the spring collection.",
+   "nameTC": "青年布",
+   "meaningTC": "一種輕薄的平紋布料，通常為棉質，經紗為有色紗線，緯紗為白色紗線。",
+   "exampleTC": "設計師在春季系列中採用輕薄的青年布，打造輕鬆自在的襯衫。",
+   "nameSC": "青年布",
+   "meaningSC": "一种轻薄的平纹布料，通常为棉质，经纱为有色纱线，纬纱为白色纱线。",
+   "exampleSC": "设计师在春季系列中采用轻薄的青年布，打造轻松自在的衬衫。"
+  },
+  {
+   "name": "Characterisation",
+   "ipaUK": "/ˌkær.ək.tə.raɪˈzeɪ.ʃən/",
+   "ipaUS": "/ˌker.ək.tə.rəˈzeɪ.ʃən/",
+   "meaning": "The way a character’s personality or identity is conveyed, including through costume and styling.",
+   "example": "The costume’s sharp tailoring and dark palette supported the characterisation of the film’s ambitious editor.",
+   "nameTC": "角色塑造",
+   "meaningTC": "透過服裝和造型等方式傳達角色性格或身分的方式。",
+   "exampleTC": "戲服俐落的剪裁和深色調，襯托出電影中野心勃勃的編輯這個角色的塑造。",
+   "nameSC": "角色塑造",
+   "meaningSC": "通过服装和造型等方式传达角色性格或身份的方式。",
+   "exampleSC": "戏服利落的剪裁和深色调，衬托出电影中野心勃勃的编辑这个角色的塑造。"
+  },
+  {
+   "name": "Chiffon",
+   "ipaUK": "/ˈʃɪf.ɒn/",
+   "ipaUS": "/ʃɪˈfɑːn/",
+   "meaning": "A very light, sheer fabric, often made from silk or synthetic fibres.",
+   "example": "A chiffon overlay softened the strong lines of the fitted evening dress.",
+   "nameTC": "雪紡",
+   "meaningTC": "一種非常輕薄透明的布料，通常以絲或合成纖維製成。",
+   "exampleTC": "雪紡外罩柔化了合身晚禮服的強烈線條。",
+   "nameSC": "雪纺",
+   "meaningSC": "一种非常轻薄透明的布料，通常以丝或合成纤维制成。",
+   "exampleSC": "雪纺外罩柔化了合身晚礼服的强烈线条。"
+  },
+  {
+   "name": "Choreography",
+   "ipaUK": "/ˌkɒr.iˈɒɡ.rə.fi/",
+   "ipaUS": "/ˌkɔːr.iˈɑː.ɡrə.fi/",
+   "meaning": "The planned arrangement of movements for a dance or performance.",
+   "example": "The models’ slow choreography gave the audience time to study the movement of the pleated garments.",
+   "nameTC": "編舞",
+   "meaningTC": "為舞蹈或表演事先規劃好的動作編排。",
+   "exampleTC": "模特兒緩慢的編排動作，讓觀眾有時間欣賞褶襉服裝的動態。",
+   "nameSC": "编舞",
+   "meaningSC": "为舞蹈或表演事先规划好的动作编排。",
+   "exampleSC": "模特儿缓慢的编排动作，让观众有时间欣赏褶裥服装的动态。"
+  },
+  {
+   "name": "Contemporary",
+   "ipaUK": "/kənˈtem.pər.ə.ri/",
+   "ipaUS": "/kənˈtem.pə.rer.i/",
+   "meaning": "Existing or happening now; modern in style.",
+   "example": "The collection gave a contemporary update to the traditional trench coat through cropped proportions and recycled fabric.",
+   "nameTC": "當代的",
+   "meaningTC": "現今存在或正在發生的；風格現代的。",
+   "exampleTC": "這個系列透過短版比例和再生布料，為傳統風衣帶來當代新意。",
+   "nameSC": "当代的",
+   "meaningSC": "现今存在或正在发生的；风格现代的。",
+   "exampleSC": "这个系列通过短版比例和再生布料，为传统风衣带来当代新意。"
+  },
+  {
+   "name": "Corduroy",
+   "ipaUK": "/ˈkɔː.dʒə.rɔɪ/",
+   "ipaUS": "/ˈkɔːr.də.rɔɪ/",
+   "meaning": "A strong fabric with soft, raised parallel ridges.",
+   "example": "Wide-wale corduroy gave the autumn trousers texture and a more casual feel.",
+   "nameTC": "燈芯絨",
+   "meaningTC": "一種堅韌的布料，表面有柔軟凸起的平行條紋。",
+   "exampleTC": "寬條燈芯絨讓秋季長褲更具質感，也更顯休閒。",
+   "nameSC": "灯芯绒",
+   "meaningSC": "一种坚韧的布料，表面有柔软凸起的平行条纹。",
+   "exampleSC": "宽条灯芯绒让秋季长裤更具质感，也更显休闲。"
+  },
+  {
+   "name": "Corsetry",
+   "ipaUK": "/ˈkɔː.sə.tri/",
+   "ipaUS": "/ˈkɔːr.sə.tri/",
+   "meaning": "The design, making, or wearing of corsets and structured bodices.",
+   "example": "The designer referenced corsetry with visible boning while keeping the bodice comfortable to wear.",
+   "nameTC": "束身衣工藝",
+   "meaningTC": "束腰緊身衣及結構性上衣的設計、製作或穿著。",
+   "exampleTC": "設計師以外露的鋼骨呼應束身衣工藝，同時讓上身穿著舒適。",
+   "nameSC": "束身衣工艺",
+   "meaningSC": "束腰紧身衣及结构性上衣的设计、制作或穿着。",
+   "exampleSC": "设计师以外露的钢骨呼应束身衣工艺，同时让上身穿着舒适。"
+  },
+  {
+   "name": "Draping",
+   "ipaUK": "/ˈdreɪ.pɪŋ/",
+   "ipaUS": "/ˈdreɪ.pɪŋ/",
+   "meaning": "Arranging fabric on a body or dress form to shape and develop a garment.",
+   "example": "During the studio exercise, students practised draping muslin on a dress form to explore volume.",
+   "nameTC": "立體裁剪",
+   "meaningTC": "將布料披在人體或人台上，以塑造並發展服裝。",
+   "exampleTC": "在工作室練習中，學生在人台上以胚布進行立體裁剪，探索服裝的量感。",
+   "nameSC": "立体裁剪",
+   "meaningSC": "将布料披在人体或人台上，以塑造并发展服装。",
+   "exampleSC": "在工作室练习中，学生在人台上以坯布进行立体裁剪，探索服装的量感。"
+  },
+  {
+   "name": "E-commerce",
+   "ipaUK": "/ˌiːˈkɒm.ɜːs/",
+   "ipaUS": "/ˌiːˈkɑː.mɝːs/",
+   "meaning": "The buying and selling of goods or services over the internet.",
+   "example": "The brand’s e-commerce page used detailed garment photographs to show the fabric and fit from several angles.",
+   "nameTC": "電子商務",
+   "meaningTC": "透過網際網路買賣商品或服務。",
+   "exampleTC": "該品牌的電商頁面使用細緻的服裝照片，從多個角度呈現布料和版型。",
+   "nameSC": "电子商务",
+   "meaningSC": "通过互联网买卖商品或服务。",
+   "exampleSC": "该品牌的电商页面使用细致的服装照片，从多个角度呈现布料和版型。"
+  },
+  {
+   "name": "Embroidery",
+   "ipaUK": "/ɪmˈbrɔɪ.dər.i/",
+   "ipaUS": "/ɪmˈbrɔɪ.dɚ.i/",
+   "meaning": "Decorative designs stitched onto fabric by hand or machine.",
+   "example": "Gold embroidery highlighted the jacket’s cuffs and connected the look to the collection’s historical theme.",
+   "nameTC": "刺繡",
+   "meaningTC": "以手工或機器在布料上縫製的裝飾圖案。",
+   "exampleTC": "金色刺繡凸顯了外套的袖口，也使整體造型與系列的歷史主題相互呼應。",
+   "nameSC": "刺绣",
+   "meaningSC": "以手工或机器在布料上缝制的装饰图案。",
+   "exampleSC": "金色刺绣凸显了外套的袖口，也使整体造型与系列的历史主题相互呼应。"
+  },
+  {
+   "name": "Facade",
+   "ipaUK": "/fəˈsɑːd/",
+   "ipaUS": "/fəˈsɑːd/",
+   "meaning": "The front or outward face of a building; by extension, an outward appearance.",
+   "example": "The boutique’s glass facade displayed mannequins in the new collection to attract passers-by.",
+   "nameTC": "門面；外觀",
+   "meaningTC": "建築物的正面或外觀；引申指外在表象。",
+   "exampleTC": "精品店的玻璃門面展示著新系列的人台模特兒，吸引路人駐足。",
+   "nameSC": "门面；外观",
+   "meaningSC": "建筑物的正面或外观；引申指外在表象。",
+   "exampleSC": "精品店的玻璃门面展示着新系列的人台模特儿，吸引路人驻足。"
+  },
+  {
+   "name": "Faux Fur",
+   "ipaUK": "/fəʊ fɜːr/",
+   "ipaUS": "/foʊ fɝːr/",
+   "meaning": "A manufactured fabric designed to look and feel like animal fur.",
+   "example": "The faux fur collar added warmth and texture to the recycled-wool coat.",
+   "nameTC": "人造毛皮",
+   "meaningTC": "一種人造布料，外觀和觸感都仿似動物毛皮。",
+   "exampleTC": "人造毛皮領子為再生羊毛大衣增添了溫暖與質感。",
+   "nameSC": "人造毛皮",
+   "meaningSC": "一种人造布料，外观和触感都仿似动物毛皮。",
+   "exampleSC": "人造毛皮领子为再生羊毛大衣增添了温暖与质感。"
+  },
+  {
+   "name": "Gabardine",
+   "ipaUK": "/ˈɡæb.ə.diːn/",
+   "ipaUS": "/ˈɡæb.ɚ.diːn/",
+   "meaning": "A closely woven, durable fabric, commonly made from wool, cotton, or a blend.",
+   "example": "The student selected gabardine for a raincoat because its dense weave holds a clean shape.",
+   "nameTC": "華達呢",
+   "meaningTC": "一種織法緊密、耐用的布料，通常由羊毛、棉或混紡製成。",
+   "exampleTC": "學生選用華達呢來做雨衣，因為它緻密的織法能維持俐落的版型。",
+   "nameSC": "华达呢",
+   "meaningSC": "一种织法紧密、耐用的布料，通常由羊毛、棉或混纺制成。",
+   "exampleSC": "学生选用华达呢来做雨衣，因为它致密的织法能维持利落的版型。"
+  },
+  {
+   "name": "Haute Couture",
+   "ipaUK": "/ˌəʊt kuːˈtjʊər/",
+   "ipaUS": "/ˌoʊt kuːˈtʊr/",
+   "meaning": "Expensive, high-quality fashion designed and made by hand, often specially for an individual client.",
+   "example": "The haute couture gown was fitted by hand for one client and embroidered over several weeks.",
+   "nameTC": "高級訂製服",
+   "meaningTC": "昂貴、高品質的手工設計與製作時裝，通常專為個別客戶量身訂製。",
+   "exampleTC": "這件高級訂製禮服為單一客戶手工試身，並耗費數週時間刺繡完成。",
+   "nameSC": "高级定制服",
+   "meaningSC": "昂贵、高品质的手工设计与制作时装，通常专为个别客户量身定制。",
+   "exampleSC": "这件高级定制礼服为单一客户手工试穿，并耗费数周时间刺绣完成。"
+  },
+  {
+   "name": "Interfacing",
+   "ipaUK": "/ˈɪn.təˌfeɪ.sɪŋ/",
+   "ipaUS": "/ˈɪn.t̬ɚˌfeɪ.sɪŋ/",
+   "meaning": "A layer of material placed between fabric layers to add support, shape, or stiffness.",
+   "example": "She fused lightweight interfacing to the collar pieces so they would keep their shape after pressing.",
+   "nameTC": "襯布",
+   "meaningTC": "放置在布料層之間，用來增加支撐、造型或挺度的材料。",
+   "exampleTC": "她在領片上燙貼輕薄的襯布，讓領片在熨燙後仍能保持形狀。",
+   "nameSC": "衬布",
+   "meaningSC": "放置在布料层之间，用来增加支撑、造型或挺度的材料。",
+   "exampleSC": "她在领片上烫贴轻薄的衬布，让领片在熨烫后仍能保持形状。"
+  },
+  {
+   "name": "Jacquard",
+   "ipaUK": "/ˈdʒæk.ɑːd/",
+   "ipaUS": "/dʒəˈkɑːrd/",
+   "meaning": "A fabric woven with an intricate pattern, rather than a pattern printed on its surface.",
+   "example": "A woven jacquard pattern gave the simple shift dress visual interest without added trim.",
+   "nameTC": "提花",
+   "meaningTC": "以織造方式形成複雜圖案的布料，而非印在表面上的圖案。",
+   "exampleTC": "織造的提花圖案讓簡約的直筒洋裝更具視覺趣味，無需額外裝飾。",
+   "nameSC": "提花",
+   "meaningSC": "以织造方式形成复杂图案的布料，而非印在表面上的图案。",
+   "exampleSC": "织造的提花图案让简约的直筒连衣裙更具视觉趣味，无需额外装饰。"
+  },
+  {
+   "name": "Lingerie",
+   "ipaUK": "/ˈlɒn.ʒə.ri/",
+   "ipaUS": "/ˌlɑːn.ʒəˈreɪ/",
+   "meaning": "Women's underwear, especially delicate or decorative underwear.",
+   "example": "The collection treated lingerie-inspired lace as a visible layer beneath a tailored blazer.",
+   "nameTC": "女性內衣",
+   "meaningTC": "女性內衣，尤指精緻或帶有裝飾的內衣。",
+   "exampleTC": "這個系列把受內衣啟發的蕾絲，當作剪裁西裝外套底下可見的一層。",
+   "nameSC": "女性内衣",
+   "meaningSC": "女性内衣，尤指精致或带有装饰的内衣。",
+   "exampleSC": "这个系列把受内衣启发的蕾丝，当作剪裁西装外套底下可见的一层。"
+  },
+  {
+   "name": "Mannequin",
+   "ipaUK": "/ˈmæn.ə.kɪn/",
+   "ipaUS": "/ˈmæn.ə.kɪn/",
+   "meaning": "A human-shaped model used to display clothing in a shop or for garment fitting.",
+   "example": "The student pinned the toile on a mannequin to check the shoulder balance before making changes.",
+   "nameTC": "人台模特兒",
+   "meaningTC": "呈人形的模型，用於商店陳列服裝或服裝試穿。",
+   "exampleTC": "學生將胚布樣衣別在人台上，檢查肩線平衡後再進行修改。",
+   "nameSC": "人台模特儿",
+   "meaningSC": "呈人形的模型，用于商店陈列服装或服装试穿。",
+   "exampleSC": "学生将坯布样衣别在人台上，检查肩线平衡后再进行修改。"
+  },
+  {
+   "name": "Masquerade",
+   "ipaUK": "/ˌmæs.kərˈeɪd/",
+   "ipaUS": "/ˌmæs.kəˈreɪd/",
+   "meaning": "A party or event where people wear masks or disguises; also the act of disguising oneself.",
+   "example": "The masquerade looks used feathered masks and dramatic capes to transform familiar eveningwear.",
+   "nameTC": "化裝舞會",
+   "meaningTC": "人們戴上面具或偽裝的派對或活動；也指偽裝自己的行為。",
+   "exampleTC": "化裝舞會造型運用羽毛面具和戲劇性的斗篷，改造了大家熟悉的晚禮服。",
+   "nameSC": "化装舞会",
+   "meaningSC": "人们戴上面具或伪装的派对或活动；也指伪装自己的行为。",
+   "exampleSC": "化装舞会造型运用羽毛面具和戏剧性的斗篷，改造了大家熟悉的晚礼服。"
+  },
+  {
+   "name": "Maximalism",
+   "ipaUK": "/ˈmæk.sɪ.mə.lɪ.zəm/",
+   "ipaUS": "/ˈmæk.sə.mə.lɪ.zəm/",
+   "meaning": "A style that uses abundant materials, colours, detail, and complex forms.",
+   "example": "The styling embraced maximalism through layered prints, oversized jewellery, and vivid colour.",
+   "nameTC": "極繁主義",
+   "meaningTC": "一種運用大量材料、色彩、細節和複雜形式的風格。",
+   "exampleTC": "這次造型透過層疊印花、超大尺寸珠寶和鮮豔色彩，展現極繁主義。",
+   "nameSC": "极繁主义",
+   "meaningSC": "一种运用大量材料、色彩、细节和复杂形式的风格。",
+   "exampleSC": "这次造型通过层叠印花、超大尺寸珠宝和鲜艳色彩，展现极繁主义。"
+  },
+  {
+   "name": "Millinery",
+   "ipaUK": "/ˈmɪl.ɪ.nər.i/",
+   "ipaUS": "/ˈmɪl.ə.ner.i/",
+   "meaning": "The design, making, or selling of women’s hats.",
+   "example": "The millinery student shaped felt over a block to create a sculptural hat for the runway.",
+   "nameTC": "女帽設計",
+   "meaningTC": "女帽的設計、製作或銷售。",
+   "exampleTC": "女帽設計系的學生把毛氈壓在帽模上，打造出一頂適合伸展台的雕塑感帽子。",
+   "nameSC": "女帽设计",
+   "meaningSC": "女帽的设计、制作或销售。",
+   "exampleSC": "女帽设计系的学生把毛毡压在帽模上，打造出一顶适合伸展台的雕塑感帽子。"
+  },
+  {
+   "name": "Minimalism",
+   "ipaUK": "/ˈmɪn.ɪ.mə.lɪ.zəm/",
+   "ipaUS": "/ˈmɪn.ə.mə.lɪ.zəm/",
+   "meaning": "A style that uses very few elements and emphasizes simplicity.",
+   "example": "Minimalism guided the collection: each garment used precise cuts, quiet colours, and very little decoration.",
+   "nameTC": "極簡主義",
+   "meaningTC": "只使用極少元素並強調簡潔的風格。",
+   "exampleTC": "極簡主義主導了整個系列：每件服裝都以精準剪裁、沉靜色調和極少裝飾呈現。",
+   "nameSC": "极简主义",
+   "meaningSC": "只使用极少元素并强调简洁的风格。",
+   "exampleSC": "极简主义主导了整个系列：每件服装都以精准剪裁、沉静色调和极少装饰呈现。"
+  },
+  {
+   "name": "Monochromatic",
+   "ipaUK": "/ˌmɒn.əʊ.krəˈmæt.ɪk/",
+   "ipaUS": "/ˌmɑː.noʊ.krəˈmæt̬.ɪk/",
+   "meaning": "Using one colour, or a range of black, white, and grey.",
+   "example": "A monochromatic outfit in several shades of blue made the difference in fabric textures more noticeable.",
+   "nameTC": "單色調的",
+   "meaningTC": "使用單一顏色，或黑、白、灰的色階範圍。",
+   "exampleTC": "以多種深淺藍色搭配的單色調服裝，讓不同布料質感的差異更為明顯。",
+   "nameSC": "单色调的",
+   "meaningSC": "使用单一颜色，或黑、白、灰的色阶范围。",
+   "exampleSC": "以多种深浅蓝色搭配的单色调服装，让不同布料质感的差异更为明显。"
+  },
+  {
+   "name": "Organza",
+   "ipaUK": "/ɔːˈɡæn.zə/",
+   "ipaUS": "/ɔːrˈɡæn.zə/",
+   "meaning": "A thin, stiff, transparent fabric, traditionally made from silk or synthetic threads.",
+   "example": "The designer layered organza over satin to create a light, translucent sleeve.",
+   "nameTC": "歐根紗",
+   "meaningTC": "一種薄而硬挺的透明布料，傳統上以絲或合成纖維絲線製成。",
+   "exampleTC": "設計師將歐根紗疊在緞面上，打造出輕盈透光的袖子。",
+   "nameSC": "欧根纱",
+   "meaningSC": "一种薄而硬挺的透明布料，传统上以丝或合成纤维丝线制成。",
+   "exampleSC": "设计师将欧根纱叠在缎面上，打造出轻盈透光的袖子。"
+  },
+  {
+   "name": "Prosthetics",
+   "ipaUK": "/ˌprɒsˈθet.ɪks/",
+   "ipaUS": "/ˌprɑːsˈθet̬.ɪks/",
+   "meaning": "Artificial body parts or devices; in costume and performance, pieces used to alter a performer’s appearance.",
+   "example": "The costume team used prosthetics to change the model’s silhouette for the editorial shoot.",
+   "nameTC": "假體；義肢",
+   "meaningTC": "人工身體部位或裝置；在服裝和表演中，指用來改變表演者外貌的配件。",
+   "exampleTC": "服裝團隊使用特效假體，為雜誌拍攝改變模特兒的輪廓。",
+   "nameSC": "假体；义肢",
+   "meaningSC": "人工身体部位或装置；在服装和表演中，指用来改变表演者外貌的配件。",
+   "exampleSC": "服装团队使用特效假体，为杂志拍摄改变模特儿的轮廓。"
+  },
+  {
+   "name": "Reconstruction",
+   "ipaUK": "/ˌriː.kənˈstrʌk.ʃən/",
+   "ipaUS": "/ˌriː.kənˈstrʌk.ʃən/",
+   "meaning": "The process or result of recreating a garment, design, or historical style from available evidence.",
+   "example": "The team’s reconstruction of the 1920s coat used archive photographs to guide its pattern and detailing.",
+   "nameTC": "復原重製",
+   "meaningTC": "根據現有證據重新製作服裝、設計或歷史風格的過程或成果。",
+   "exampleTC": "團隊復原製作1920年代外套時，以檔案照片作為版型和細節的依據。",
+   "nameSC": "复原重制",
+   "meaningSC": "根据现有证据重新制作服装、设计或历史风格的过程或成果。",
+   "exampleSC": "团队复原制作1920年代外套时，以档案照片作为版型和细节的依据。"
+  },
+  {
+   "name": "Silhouette",
+   "ipaUK": "/ˌsɪl.uˈet/",
+   "ipaUS": "/ˌsɪl.əˈwet/",
+   "meaning": "The overall outline or shape created by a garment when worn.",
+   "example": "The padded shoulders and narrow waist created a strong silhouette in the final look.",
+   "nameTC": "輪廓；廓形",
+   "meaningTC": "服裝穿著時所形成的整體外形或輪廓。",
+   "exampleTC": "墊肩與窄腰在最後一套造型中勾勒出強烈的輪廓。",
+   "nameSC": "轮廓；廓形",
+   "meaningSC": "服装穿着时所形成的整体外形或轮廓。",
+   "exampleSC": "垫肩与窄腰在最后一套造型中勾勒出强烈的轮廓。"
+  },
+  {
+   "name": "Suede",
+   "ipaUK": "/sweɪd/",
+   "ipaUS": "/sweɪd/",
+   "meaning": "Leather with a soft, slightly rough surface made from the underside of the skin.",
+   "example": "Suede panels added a soft, matte contrast to the polished leather jacket.",
+   "nameTC": "麂皮",
+   "meaningTC": "以獸皮內層製成、表面柔軟且略顯粗糙的皮革。",
+   "exampleTC": "麂皮拼接為光亮的皮夾克增添柔和的霧面對比。",
+   "nameSC": "麂皮",
+   "meaningSC": "以兽皮内层制成、表面柔软且略显粗糙的皮革。",
+   "exampleSC": "麂皮拼接为光亮的皮夹克增添柔和的雾面对比。"
+  },
+  {
+   "name": "Taffeta",
+   "ipaUK": "/ˈtæf.ə.tə/",
+   "ipaUS": "/ˈtæf.ɪ.t̬ə/",
+   "meaning": "A smooth, crisp fabric with a slight sheen, often used for formal clothing.",
+   "example": "The crisp taffeta held the volume of the skirt without requiring a heavy lining.",
+   "nameTC": "塔夫綢",
+   "meaningTC": "一種平滑挺括、略帶光澤的布料，常用於正式服裝。",
+   "exampleTC": "挺括的塔夫綢撐起了裙子的蓬度，不需要厚重的襯裡。",
+   "nameSC": "塔夫绸",
+   "meaningSC": "一种平滑挺括、略带光泽的布料，常用于正式服装。",
+   "exampleSC": "挺括的塔夫绸撑起了裙子的蓬度，不需要厚重的衬里。"
+  },
+  {
+   "name": "Tailoring",
+   "ipaUK": "/ˈteɪ.lər.ɪŋ/",
+   "ipaUS": "/ˈteɪ.lɚ.ɪŋ/",
+   "meaning": "The making, altering, or fitting of clothing, especially structured garments such as suits.",
+   "example": "Careful tailoring improved the jacket’s fit through the shoulder and chest.",
+   "nameTC": "量身剪裁",
+   "meaningTC": "服裝的製作、修改或試身，尤指西裝等結構性服裝。",
+   "exampleTC": "細緻的剪裁改善了外套在肩膀和胸前的合身度。",
+   "nameSC": "量身剪裁",
+   "meaningSC": "服装的制作、修改或试穿，尤指西装等结构性服装。",
+   "exampleSC": "细致的剪裁改善了外套在肩膀和胸前的合身度。"
+  },
+  {
+   "name": "Theatrical",
+   "ipaUK": "/θiˈæt.rɪ.kəl/",
+   "ipaUS": "/θiˈæt.rɪ.kəl/",
+   "meaning": "Dramatic or striking in a way associated with theatre or stage costume.",
+   "example": "Theatrical sleeves and a sweeping train made the look suitable for the collection finale.",
+   "nameTC": "戲劇性的",
+   "meaningTC": "具有與戲劇或舞台服裝相關的戲劇化或引人注目的特質。",
+   "exampleTC": "戲劇感十足的袖子和曳地長裙，讓這套造型很適合作為系列壓軸。",
+   "nameSC": "戏剧性的",
+   "meaningSC": "具有与戏剧或舞台服装相关的戏剧化或引人注目的特质。",
+   "exampleSC": "戏剧感十足的袖子和曳地长裙，让这套造型很适合作为系列压轴。"
+  },
+  {
+   "name": "Tulle",
+   "ipaUK": "/tjuːl/",
+   "ipaUS": "/tuːl/",
+   "meaning": "A fine, lightweight net fabric used for veils, skirts, and decorative details.",
+   "example": "Layers of soft tulle gave the skirt volume while allowing it to move lightly.",
+   "nameTC": "網紗",
+   "meaningTC": "一種輕薄的細網眼布料，用於頭紗、裙子和裝飾細節。",
+   "exampleTC": "層層柔軟的網紗為裙子帶來蓬度，同時讓裙子輕盈擺動。",
+   "nameSC": "网纱",
+   "meaningSC": "一种轻薄的细网眼布料，用于头纱、裙子和装饰细节。",
+   "exampleSC": "层层柔软的网纱为裙子带来蓬度，同时让裙子轻盈摆动。"
+  },
+  {
+   "name": "Typography",
+   "ipaUK": "/taɪˈpɒɡ.rə.fi/",
+   "ipaUS": "/taɪˈpɑː.ɡrə.fi/",
+   "meaning": "The design and arrangement of written or printed text, including its lettering and layout.",
+   "example": "The campaign’s bold typography echoed the angular lines of the garments.",
+   "nameTC": "字體排印",
+   "meaningTC": "書寫或印刷文字的設計與編排，包括字體和版面。",
+   "exampleTC": "活動宣傳大膽的字體排印，呼應了服裝的稜角線條。",
+   "nameSC": "字体排印",
+   "meaningSC": "书写或印刷文本的设计与编排，包括字体和版面。",
+   "exampleSC": "活动宣传大胆的字体排印，呼应了服装的棱角线条。"
+  },
+  {
+   "name": "Viscose",
+   "ipaUK": "/ˈvɪs.kəʊs/",
+   "ipaUS": "/ˈvɪs.koʊs/",
+   "meaning": "A soft textile fibre made from processed cellulose; also called rayon.",
+   "example": "The viscose blouse draped fluidly and felt cool against the skin.",
+   "nameTC": "黏膠纖維（人造絲）",
+   "meaningTC": "一種以經過加工的纖維素製成的柔軟紡織纖維，也稱人造絲。",
+   "exampleTC": "黏膠纖維上衣垂墜流暢，穿在身上帶有涼感。",
+   "nameSC": "粘胶纤维（人造丝）",
+   "meaningSC": "一种以经过加工的纤维素制成的柔软纺织纤维，也称人造丝。",
+   "exampleSC": "粘胶纤维上衣垂坠流畅，穿在身上带有凉感。"
+  },
+  {
+   "name": "Toile",
+   "ipaUK": "/twɑːl/",
+   "ipaUS": "/twɑːl/",
+   "meaning": "A preliminary garment, usually made from inexpensive fabric, used to test a design and fit before cutting the final material.",
+   "example": "Before cutting the silk, the student adjusted the toile to refine the waist and sleeve fit.",
+   "nameTC": "胚布樣衣",
+   "meaningTC": "一種初步樣衣，通常以廉價布料製成，用來在裁剪正式布料之前測試設計和版型。",
+   "exampleTC": "在裁剪真絲之前，學生調整了胚布樣衣，以修整腰身與袖子的合身度。",
+   "nameSC": "坯布样衣",
+   "meaningSC": "一种初步样衣，通常以廉价布料制成，用来在裁剪正式布料之前测试设计和版型。",
+   "exampleSC": "在裁剪真丝之前，学生调整了坯布样衣，以修整腰身与袖子的合身度。"
+  }
+ ],
+ "brands": [
+  {
+   "name": "Alaïa",
+   "country": "France",
+   "ipaUK": "/əˈlaɪ.ə/",
+   "ipaUS": "/ɑːˈlaɪ.ə/",
+   "url": "https://www.pexels.com/search/Alaia%20dress/",
+   "nameTC": "阿萊亞",
+   "nameSC": "阿莱亚",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Balmain",
+   "country": "France",
+   "ipaUK": "/ˈbæl.mæn/",
+   "ipaUS": "/bælˈmæn/",
+   "url": "https://www.pexels.com/search/Balmain%20fashion/",
+   "nameTC": "巴爾曼",
+   "nameSC": "巴尔曼",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Cartier",
+   "country": "France",
+   "ipaUK": "/ˈkɑː.ti.eɪ/",
+   "ipaUS": "/ˌkɑːr.t̬iˈeɪ/",
+   "url": "https://www.pexels.com/search/Cartier%20jewelry/",
+   "nameTC": "卡地亞",
+   "nameSC": "卡地亚",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Céline",
+   "country": "France",
+   "ipaUK": "/seˈliːn/",
+   "ipaUS": "/səˈliːn/",
+   "url": "https://www.pexels.com/search/Celine%20fashion/",
+   "nameTC": "思琳",
+   "nameSC": "思琳",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Chanel",
+   "country": "France",
+   "ipaUK": "/ʃəˈnel/",
+   "ipaUS": "/ʃəˈnel/",
+   "url": "https://www.pexels.com/search/Chanel%20bag/",
+   "nameTC": "香奈兒",
+   "nameSC": "香奈儿",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Chloé",
+   "country": "France",
+   "ipaUK": "/ˈkləʊ.i/",
+   "ipaUS": "/ˈkloʊ.i/",
+   "url": "https://www.pexels.com/search/Chloe%20fashion/",
+   "nameTC": "蔻依",
+   "nameSC": "蔻依",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Christian Dior",
+   "country": "France",
+   "ipaUK": "/ˌkrɪs.tʃən diˈɔː/",
+   "ipaUS": "/ˌkrɪs.tʃən diˈɔːr/",
+   "url": "https://www.pexels.com/search/Christian%20Dior%20fashion/",
+   "nameTC": "克里斯汀·迪奧",
+   "nameSC": "克里斯汀·迪奥",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Christian Louboutin",
+   "country": "France",
+   "ipaUK": "/ˌkrɪs.tʃən ˈluː.bʊ.tæn/",
+   "ipaUS": "/ˌkrɪs.tʃən ˌluː.buːˈtæn/",
+   "url": "https://www.pexels.com/search/Christian%20Louboutin%20shoes/",
+   "nameTC": "克里斯提·魯布托",
+   "nameSC": "克里斯提·鲁布托",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Givenchy",
+   "country": "France",
+   "ipaUK": "/ʒɪˈvɒn.ʃi/",
+   "ipaUS": "/ʒɪˈvɑːn.ʃi/",
+   "url": "https://www.pexels.com/search/Givenchy%20fashion/",
+   "nameTC": "紀梵希",
+   "nameSC": "纪梵希",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Goyard",
+   "country": "France",
+   "ipaUK": "/ˈɡɔɪ.ɑːd/",
+   "ipaUS": "/ɡɔɪˈɑːrd/",
+   "url": "https://www.pexels.com/search/Goyard%20bag/",
+   "nameTC": "戈雅",
+   "nameSC": "戈雅",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Hermès",
+   "country": "France",
+   "ipaUK": "/eəˈmez/",
+   "ipaUS": "/erˈmez/",
+   "url": "https://www.pexels.com/search/Hermes%20bag/",
+   "nameTC": "愛馬仕",
+   "nameSC": "爱马仕",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Jacquemus",
+   "country": "France",
+   "ipaUK": "/ʒækˈmuːs/",
+   "ipaUS": "/ʒɑːkˈmuːs/",
+   "url": "https://www.pexels.com/search/Jacquemus%20fashion/",
+   "nameTC": "雅克慕斯",
+   "nameSC": "雅克慕斯",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Jean Paul Gaultier",
+   "country": "France",
+   "ipaUK": "/ˌʒɒn pɔːl ˈɡəʊ.ti.eɪ/",
+   "ipaUS": "/ˌʒɑːn pɔːl ɡoʊˈtjeɪ/",
+   "url": "https://www.pexels.com/search/Jean%20Paul%20Gaultier%20fashion/",
+   "nameTC": "尚-保羅·高堤耶",
+   "nameSC": "让-保罗·高缇耶",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Karl Lagerfeld",
+   "country": "France",
+   "ipaUK": "/kɑːl ˈlɑː.ɡə.feld/",
+   "ipaUS": "/kɑːrl ˈlɑː.ɡɚ.feld/",
+   "url": "https://www.pexels.com/search/Karl%20Lagerfeld%20fashion/",
+   "nameTC": "卡爾·拉格斐",
+   "nameSC": "卡尔·拉格斐",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Lanvin",
+   "country": "France",
+   "ipaUK": "/ˈlɒn.væn/",
+   "ipaUS": "/lɑːnˈvæn/",
+   "url": "https://www.pexels.com/search/Lanvin%20fashion/",
+   "nameTC": "浪凡",
+   "nameSC": "浪凡",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Maison Kitsuné",
+   "country": "France",
+   "ipaUK": "/ˌmeɪ.zɒn kɪtˈsuː.neɪ/",
+   "ipaUS": "/ˌmeɪ.zɑːn kɪtˈsuː.neɪ/",
+   "url": "https://www.pexels.com/search/Maison%20Kitsune%20fashion/",
+   "nameTC": "",
+   "nameSC": "",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Maison Margiela",
+   "country": "France",
+   "ipaUK": "/ˌmeɪ.zɒn mɑːˈdʒel.ə/",
+   "ipaUS": "/ˌmeɪ.zɑːn mɑːrˈdʒel.ə/",
+   "url": "https://www.pexels.com/search/Maison%20Margiela%20fashion/",
+   "nameTC": "梅森·馬吉拉",
+   "nameSC": "梅森·马吉拉",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Moncler",
+   "country": "France",
+   "ipaUK": "/mɒnˈkleə/",
+   "ipaUS": "/mɑːnˈkler/",
+   "url": "https://www.pexels.com/search/Moncler%20jacket/",
+   "nameTC": "盟可睞",
+   "nameSC": "盟可睐",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Rochas",
+   "country": "France",
+   "ipaUK": "/ˈrɒʃ.æs/",
+   "ipaUS": "/ˈroʊ.ʃɑːs/",
+   "url": "https://www.pexels.com/search/Rochas%20fashion/",
+   "nameTC": "羅莎",
+   "nameSC": "罗莎",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Yves Saint Laurent",
+   "country": "France",
+   "ipaUK": "/ˌiːv ˌsæn lɒˈrɒn/",
+   "ipaUS": "/ˌiːv ˌsæn ləˈrɑːn/",
+   "url": "https://www.pexels.com/search/Yves%20Saint%20Laurent%20fashion/",
+   "nameTC": "聖羅蘭",
+   "nameSC": "圣罗兰",
+   "countryTC": "法國",
+   "countrySC": "法国"
+  },
+  {
+   "name": "Bottega Veneta",
+   "country": "Italy",
+   "ipaUK": "/bɒˌteɡ.ə ˈven.ɪ.tə/",
+   "ipaUS": "/boʊˌteɡ.ə ˈven.ə.t̬ə/",
+   "url": "https://www.pexels.com/search/Bottega%20Veneta%20bag/",
+   "nameTC": "寶緹嘉",
+   "nameSC": "葆蝶家",
+   "countryTC": "義大利",
+   "countrySC": "意大利"
+  },
+  {
+   "name": "Brunello Cucinelli",
+   "country": "Italy",
+   "ipaUK": "/bruːˌnel.əʊ ˌkuː.tʃɪˈnel.i/",
+   "ipaUS": "/bruːˌnel.oʊ ˌkuː.tʃɪˈnel.i/",
+   "url": "https://www.pexels.com/search/Brunello%20Cucinelli%20fashion/",
+   "nameTC": "布魯奈羅·庫奇內利",
+   "nameSC": "布鲁奈罗·库奇内利",
+   "countryTC": "義大利",
+   "countrySC": "意大利"
+  },
+  {
+   "name": "Dolce & Gabbana",
+   "country": "Italy",
+   "ipaUK": "/ˌdɒl.tʃi ən ɡəˈbɑː.nə/",
+   "ipaUS": "/ˌdoʊl.tʃeɪ ən ɡəˈbɑː.nə/",
+   "url": "https://www.pexels.com/search/Dolce%20Gabbana%20fashion/",
+   "nameTC": "杜嘉班納",
+   "nameSC": "杜嘉班纳",
+   "countryTC": "義大利",
+   "countrySC": "意大利"
+  },
+  {
+   "name": "Ermenegildo Zegna",
+   "country": "Italy",
+   "ipaUK": "/ˌɜː.mə.nəˌdʒɪl.dəʊ ˈzen.jə/",
+   "ipaUS": "/ˌɝː.mə.nəˌdʒɪl.doʊ ˈzen.jə/",
+   "url": "https://www.pexels.com/search/Zegna%20suit/",
+   "nameTC": "傑尼亞",
+   "nameSC": "杰尼亚",
+   "countryTC": "義大利",
+   "countrySC": "意大利"
+  },
+  {
+   "name": "Giambattista Valli",
+   "country": "Italy",
+   "ipaUK": "/ˌdʒæm.bəˌtɪs.tə ˈvæl.i/",
+   "ipaUS": "/ˌdʒɑːm.bəˌtɪs.tə ˈvæl.i/",
+   "url": "https://www.pexels.com/search/Giambattista%20Valli%20dress/",
+   "nameTC": "",
+   "nameSC": "",
+   "countryTC": "義大利",
+   "countrySC": "意大利"
+  },
+  {
+   "name": "Loro Piana",
+   "country": "Italy",
+   "ipaUK": "/ˌlɔː.rəʊ piˈɑː.nə/",
+   "ipaUS": "/ˌlɔːr.oʊ piˈɑː.nə/",
+   "url": "https://www.pexels.com/search/Loro%20Piana%20fashion/",
+   "nameTC": "諾悠翠雅",
+   "nameSC": "诺悠翠雅",
+   "countryTC": "義大利",
+   "countrySC": "意大利"
+  },
+  {
+   "name": "Moschino",
+   "country": "Italy",
+   "ipaUK": "/mɒsˈkiː.nəʊ/",
+   "ipaUS": "/mɑːsˈkiː.noʊ/",
+   "url": "https://www.pexels.com/search/Moschino%20fashion/",
+   "nameTC": "莫斯奇諾",
+   "nameSC": "莫斯奇诺",
+   "countryTC": "義大利",
+   "countrySC": "意大利"
+  },
+  {
+   "name": "Salvatore Ferragamo",
+   "country": "Italy",
+   "ipaUK": "/ˌsæl.vəˌtɔː.ri ˌfer.əˈɡɑː.məʊ/",
+   "ipaUS": "/ˌsæl.vəˌtɔːr.i ˌfer.əˈɡɑː.moʊ/",
+   "url": "https://www.pexels.com/search/Ferragamo%20shoes/",
+   "nameTC": "薩爾瓦托·菲拉格慕",
+   "nameSC": "萨尔瓦托·菲拉格慕",
+   "countryTC": "義大利",
+   "countrySC": "意大利"
+  },
+  {
+   "name": "Versace",
+   "country": "Italy",
+   "ipaUK": "/vəˈsɑː.tʃi/",
+   "ipaUS": "/vɚˈsɑː.tʃi/",
+   "url": "https://www.pexels.com/search/Versace%20fashion/",
+   "nameTC": "凡賽斯",
+   "nameSC": "范思哲",
+   "countryTC": "義大利",
+   "countrySC": "意大利"
+  },
+  {
+   "name": "Comme des Garçons",
+   "country": "Japan",
+   "ipaUK": "/ˌkɒm deɪ ˈɡɑː.sɒn/",
+   "ipaUS": "/ˌkɑːm deɪ ɡɑːrˈsɔːn/",
+   "url": "https://www.pexels.com/search/Comme%20des%20Garcons%20fashion/",
+   "nameTC": "川久保玲",
+   "nameSC": "川久保玲",
+   "countryTC": "日本",
+   "countrySC": "日本"
+  },
+  {
+   "name": "Issey Miyake",
+   "country": "Japan",
+   "ipaUK": "/ˌɪs.i miˈjɑː.ki/",
+   "ipaUS": "/ˌɪs.eɪ miˈjɑː.ki/",
+   "url": "https://www.pexels.com/search/Issey%20Miyake%20pleats/",
+   "nameTC": "三宅一生",
+   "nameSC": "三宅一生",
+   "countryTC": "日本",
+   "countrySC": "日本"
+  },
+  {
+   "name": "Yohji Yamamoto",
+   "country": "Japan",
+   "ipaUK": "/ˌjəʊ.dʒi ˌjæm.əˈməʊ.təʊ/",
+   "ipaUS": "/ˌjoʊ.dʒi ˌjɑː.məˈmoʊ.t̬oʊ/",
+   "url": "https://www.pexels.com/search/Yohji%20Yamamoto%20fashion/",
+   "nameTC": "山本耀司",
+   "nameSC": "山本耀司",
+   "countryTC": "日本",
+   "countrySC": "日本"
+  },
+  {
+   "name": "Balenciaga",
+   "country": "Spain",
+   "ipaUK": "/bəˌlen.siˈɑː.ɡə/",
+   "ipaUS": "/bəˌlen.siˈɑː.ɡə/",
+   "url": "https://www.pexels.com/search/Balenciaga%20fashion/",
+   "nameTC": "巴黎世家",
+   "nameSC": "巴黎世家",
+   "countryTC": "西班牙",
+   "countrySC": "西班牙"
+  },
+  {
+   "name": "Loewe",
+   "country": "Spain",
+   "ipaUK": "/lɔːˈev.eɪ/",
+   "ipaUS": "/loʊˈev.eɪ/",
+   "url": "https://www.pexels.com/search/Loewe%20bag/",
+   "nameTC": "羅意威",
+   "nameSC": "罗意威",
+   "countryTC": "西班牙",
+   "countrySC": "西班牙"
+  },
+  {
+   "name": "Vetements",
+   "country": "Switzerland",
+   "ipaUK": "/ˈvet.mɒn/",
+   "ipaUS": "/ˌvet.əˈmɑːn/",
+   "url": "https://www.pexels.com/search/Vetements%20fashion/",
+   "nameTC": "",
+   "nameSC": "",
+   "countryTC": "瑞士",
+   "countrySC": "瑞士"
+  },
+  {
+   "name": "Alexander McQueen",
+   "country": "United Kingdom",
+   "ipaUK": "/ˌæl.ɪɡˈzɑːn.də məˈkwiːn/",
+   "ipaUS": "/ˌæl.ɪɡˈzæn.dɚ məˈkwiːn/",
+   "url": "https://www.pexels.com/search/Alexander%20McQueen%20fashion/",
+   "nameTC": "亞歷山大·麥昆",
+   "nameSC": "亚历山大·麦昆",
+   "countryTC": "英國",
+   "countrySC": "英国"
+  },
+  {
+   "name": "John Galliano",
+   "country": "United Kingdom",
+   "ipaUK": "/dʒɒn ˌɡæl.iˈɑː.nəʊ/",
+   "ipaUS": "/dʒɑːn ˌɡæl.iˈɑː.noʊ/",
+   "url": "https://www.pexels.com/search/John%20Galliano%20fashion/",
+   "nameTC": "約翰·加利亞諾",
+   "nameSC": "约翰·加利亚诺",
+   "countryTC": "英國",
+   "countrySC": "英国"
+  },
+  {
+   "name": "Marc Jacobs",
+   "country": "United States",
+   "ipaUK": "/mɑːk ˈdʒeɪ.kəbz/",
+   "ipaUS": "/mɑːrk ˈdʒeɪ.kəbz/",
+   "url": "https://www.pexels.com/search/Marc%20Jacobs%20bag/",
+   "nameTC": "馬克·雅各布斯",
+   "nameSC": "马克·雅各布斯",
+   "countryTC": "美國",
+   "countrySC": "美国"
+  }
+ ]
+};
+
+(function(){
+  const $ = id => document.getElementById(id);
+  const STORE_KEY = "dcd-fashion-glossary-v2";
+  const MODES = {
+    terms:  { items: GLOSSARY.terms,  noun:"term",  nounPlural:"terms",  heading:"Fashion terms", placeholder:"Find a term",  label:"WORD STUDY" },
+    brands: { items: GLOSSARY.brands, noun:"brand", nounPlural:"brands", heading:"Brand names",   placeholder:"Find a brand", label:"BRAND STUDY" }
+  };
+  const state = { mode:"terms", accent:"uk", voiceMode:"english", zh:"off", index:{terms:0,brands:0}, query:"", country:"All", done:{terms:[],brands:[]} };
+
+  // ---- persistence (guarded) ----
+  try { const s = JSON.parse(localStorage.getItem(STORE_KEY)||"null");
+        if(s){ if(s.done) state.done = {terms:s.done.terms||[], brands:s.done.brands||[]}; if(s.accent) state.accent=s.accent; if(s.voiceMode) state.voiceMode=s.voiceMode; if(s.zh) state.zh=s.zh; } } catch(e){}
+  const save = () => { try{ localStorage.setItem(STORE_KEY, JSON.stringify({done:state.done, accent:state.accent, voiceMode:state.voiceMode, zh:state.zh})); }catch(e){} };
+
+  // sort alphabetically (ignoring accents)
+  Object.values(MODES).forEach(m => m.items.sort((a,b)=>a.name.localeCompare(b.name,"en",{sensitivity:"base"})));
+  const zhSuffix = () => state.zh==="tc" ? "TC" : state.zh==="sc" ? "SC" : "";
+  const zh = (it,field) => state.zh==="off" ? "" : (it[field+zhSuffix()] || "");
+  const zhLang = () => state.zh==="tc" ? "zh-Hant" : "zh-Hans";
+  function setZh(id, text){ const el=$(id); el.hidden = !text; el.textContent = text||""; if(text) el.lang = zhLang(); }
+  const isDone = (mode,name) => state.done[mode].includes(name);
+  const visible = () => {
+    const q = state.query.trim().toLowerCase();
+    return MODES[state.mode].items.filter(it =>
+      (!q || it.name.toLowerCase().includes(q) || fold(it.name).includes(fold(q)) || (it.nameTC||"").includes(q) || (it.nameSC||"").includes(q)) &&
+      (state.mode!=="brands" || state.country==="All" || it.country===state.country));
+  };
+  const fold = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+  const current = () => { const l = visible(); const m = MODES[state.mode].items;
+    const it = m[state.index[state.mode]]; return it; };
+
+  // ---- rendering ----
+  function renderTabs(){
+    document.querySelectorAll(".home-tab").forEach(t => t.setAttribute("aria-selected", String(t.dataset.mode===state.mode)));
+    $("count-terms").textContent = MODES.terms.items.length + " terms";
+    $("count-brands").textContent = MODES.brands.items.length + " brands";
+    $("panel").setAttribute("aria-labelledby", "tab-"+state.mode);
+  }
+  function renderList(){
+    const list = $("term-list"), cur = current(), vis = visible(), m = MODES[state.mode];
+    $("term-total").textContent = vis.length + (vis.length===m.items.length ? "" : " of "+m.items.length) + " " + m.nounPlural;
+    $("browser-title").textContent = m.heading;
+    list.innerHTML = "";
+    if(!vis.length){ list.innerHTML = '<div class="empty">No matches. Try another spelling.</div>'; return; }
+    vis.forEach(it => {
+      const b = document.createElement("button");
+      b.type="button"; b.className="term-item"+(isDone(state.mode,it.name)?" done":"");
+      b.setAttribute("role","option"); b.setAttribute("aria-selected", String(it===cur));
+      const name = document.createElement("span"); name.textContent = it.name;
+      const zn = zh(it,"name"); if(zn){ const z=document.createElement("span"); z.className="zh-sub"; z.lang=zhLang(); z.textContent=zn; name.appendChild(z); }
+      const meta = document.createElement("span"); meta.className="term-meta";
+      if(state.mode==="brands"){ const t=document.createElement("span"); t.className="tag"; t.textContent=it.country; meta.appendChild(t); }
+      meta.insertAdjacentHTML("beforeend",'<svg class="tick" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5 9.4 17 19 7.5"/></svg>');
+      b.append(name, meta);
+      b.addEventListener("click", ()=>{ select(it); const m = MP3_MAP[it.name]; if(m && !(state.mode==="brands" && state.voiceMode==="native")) playMp3(m, $("speak-button")); });
+      list.appendChild(b);
+    });
+    const sel = list.querySelector('[aria-selected="true"]'); if(sel && sel.scrollIntoView) sel.scrollIntoView({block:"nearest"});
+  }
+  function renderLesson(){
+    const it = current(), m = MODES[state.mode], isBrand = state.mode==="brands";
+    $("lesson-label").textContent = m.label;
+    $("selected-index").textContent = (state.index[state.mode]+1) + " of " + m.items.length;
+    $("term-title").textContent = it.name;
+    $("ipa-label").textContent = state.accent.toUpperCase()+" IPA";
+    $("term-ipa").textContent = it[state.accent==="uk"?"ipaUK":"ipaUS"] || "—";
+    document.querySelectorAll("#accent-toggle button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.accent===state.accent)));
+    $("term-view").hidden = isBrand; $("brand-view").hidden = !isBrand;
+    if(isBrand){ renderVoice(it); $("brand-country").textContent = it.country; const a=$("pexels-link"); a.href = it.url || "#"; a.hidden = !it.url; }
+    else { $("term-meaning").textContent = it.meaning; $("term-example").textContent = it.example; }
+    setZh("zh-title", zh(it,"name"));
+    setZh("zh-meaning", isBrand ? "" : zh(it,"meaning"));
+    setZh("zh-example", isBrand ? "" : zh(it,"example"));
+    setZh("zh-country", isBrand ? zh(it,"country") : "");
+    document.querySelectorAll("#zh-toggle button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.zh===state.zh)));
+    $("term-search").placeholder = m.placeholder;
+    setMessage("Say the " + (isBrand?"name":"word") + " aloud and check your pronunciation.");
+    renderMark(); renderProgress();
+  }
+  function renderVoice(it){
+    document.querySelectorAll("#voice-toggle button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.voice===state.voiceMode)));
+    const n=$("voice-note"), sp=brandSpeech(it); n.className="voice-note";
+    if(state.voiceMode==="english"){ n.textContent="Studio recording: English ("+(state.accent==="uk"?"UK":"US")+") pronunciation, matching the IPA shown."; return; }
+    if(sp.lang.startsWith("en")){ n.textContent="This brand's name is English, so an English ("+(state.accent==="uk"?"UK":"US")+") voice is used."; return; }
+    if(voices.length && !pickVoice(sp.lang)){ n.className="voice-note warn"; n.textContent="No "+LANG_NAMES[sp.lang]+" voice found on this device, so an English voice will be used instead. You can install one in your system's speech settings."; return; }
+    n.textContent="Spoken with "+(/^[AEIO]/.test(LANG_NAMES[sp.lang])?"an ":"a ")+LANG_NAMES[sp.lang]+" voice. It may differ from the English-style IPA shown.";
+  }
+  function renderMark(){
+    const it = current(), d = isDone(state.mode,it.name), b = $("mark-button");
+    b.classList.toggle("done", d); b.querySelector("span").textContent = d ? "Practised" : "Mark as practised";
+    b.setAttribute("aria-pressed", String(d));
+  }
+  function renderProgress(){
+    const m = MODES[state.mode];
+    $("progress-count").textContent = state.done[state.mode].length + " / " + m.items.length;
+    $("progress-label").textContent = m.nounPlural + " practised";
+  }
+  function renderAll(){ renderTabs(); $("country-filter-row").hidden = state.mode!=="brands"; renderLesson(); renderList(); }
+
+  // ---- actions ----
+  function select(it){ stopAudio(); state.index[state.mode] = MODES[state.mode].items.indexOf(it); renderLesson(); renderList();
+    if(window.innerWidth <= 900){ const lesson = document.querySelector(".lesson"); if(lesson) lesson.scrollIntoView({ behavior: "smooth", block: "start" }); } }
+  function step(dir){
+    const vis = visible(); if(!vis.length) return;
+    const cur = current(); let i = vis.indexOf(cur); i = i<0 ? 0 : (i+dir+vis.length)%vis.length; select(vis[i]);
+  }
+  function setMode(mode){
+    if(!MODES[mode]) return; state.mode = mode; state.query=""; $("term-search").value=""; stopAudio(); stopListening(); stopTools(); renderAll();
+  }
+  document.querySelectorAll(".home-tab").forEach(t => t.addEventListener("click", ()=>{ setMode(t.dataset.mode); history.replaceState(null,"","#"+t.dataset.mode); }));
+  document.querySelectorAll(".home-tab").forEach((t,i,all) => t.addEventListener("keydown", e=>{
+    if(e.key==="ArrowRight"||e.key==="ArrowLeft"){ const n = all[(i+1)%all.length]; n.focus(); n.click(); e.preventDefault(); } }));
+  window.addEventListener("hashchange", ()=>{ const h=location.hash.slice(1); if(MODES[h]) setMode(h); });
+
+  $("term-search").addEventListener("input", e=>{
+    state.query = e.target.value; const vis = visible();
+    if(vis.length && !vis.includes(current())) state.index[state.mode] = MODES[state.mode].items.indexOf(vis[0]);
+    renderLesson(); renderList();
+  });
+  document.addEventListener("keydown", e=>{
+    if(e.key==="/" && !/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)){ e.preventDefault(); $("term-search").focus(); }
+  });
+  $("term-list").addEventListener("keydown", e=>{
+    if(e.key==="ArrowDown"||e.key==="ArrowUp"){ e.preventDefault(); step(e.key==="ArrowDown"?1:-1);
+      const s=$("term-list").querySelector('[aria-selected="true"]'); if(s) s.focus(); }
+  });
+  // country filter
+  (function(){ const sel=$("country-filter"); const cs=[...new Set(GLOSSARY.brands.map(b=>b.country))].sort();
+    sel.innerHTML = ["All"].concat(cs).map(c=>`<option value="${c}">${c==="All"?"All countries":c}</option>`).join("");
+    sel.addEventListener("change", ()=>{ state.country=sel.value; const vis=visible();
+      if(vis.length && !vis.includes(current())) state.index.brands = MODES.brands.items.indexOf(vis[0]); renderLesson(); renderList(); }); })();
+
+  document.querySelectorAll("#accent-toggle button").forEach(b=>b.addEventListener("click", ()=>{ stopAudio(); state.accent=b.dataset.accent; save(); renderLesson(); }));
+  document.querySelectorAll("#zh-toggle button").forEach(b=>b.addEventListener("click", ()=>{ state.zh=b.dataset.zh; save(); renderLesson(); renderList(); }));
+  $("previous-button").addEventListener("click", ()=>step(-1));
+  $("next-button").addEventListener("click", ()=>step(1));
+  $("mark-button").addEventListener("click", ()=>{
+    const it=current(), arr=state.done[state.mode], i=arr.indexOf(it.name);
+    if(i>=0) arr.splice(i,1); else arr.push(it.name); save(); renderMark(); renderProgress(); renderList();
+  });
+
+  // ---- studio pronunciation clips (pre-generated MP3s) ----
+  const MP3_MAP = {
+  "Alaïa": {
+    "slug": "01_alaia",
+    "uk": "uh-lye-uh",
+    "us": "ah-lye-uh"
+  },
+  "Balmain": {
+    "slug": "02_balmain",
+    "uk": "Bal-man",
+    "us": "Bal-mahn"
+  },
+  "Cartier": {
+    "slug": "03_cartier",
+    "uk": "Kah-tee-ay",
+    "us": "Kar-tee-ay"
+  },
+  "Céline": {
+    "slug": "04_celine",
+    "uk": "Seh-leen",
+    "us": "Suh-leen"
+  },
+  "Chanel": {
+    "slug": "05_chanel",
+    "uk": "Chanel",
+    "us": "Chanel"
+  },
+  "Chloé": {
+    "slug": "06_chloe",
+    "uk": "Chlo-ee",
+    "us": "Chlo-ee"
+  },
+  "Christian Dior": {
+    "slug": "07_christian_dior",
+    "uk": "Christian Dee-or",
+    "us": "Christian Dee-or"
+  },
+  "Christian Louboutin": {
+    "slug": "08_christian_louboutin",
+    "uk": "Christian Loo-boo-tan",
+    "us": "Christian Loo-boo-tahn"
+  },
+  "Givenchy": {
+    "slug": "09_givenchy",
+    "uk": "Zhee-von-shee",
+    "us": "Zhee-vahn-shee"
+  },
+  "Goyard": {
+    "slug": "10_goyard",
+    "uk": "Goy-ahd",
+    "us": "Goy-ard"
+  },
+  "Hermès": {
+    "slug": "11_hermes",
+    "uk": "Air-mez",
+    "us": "Air-mez"
+  },
+  "Jacquemus": {
+    "slug": "12_jacquemus",
+    "uk": "Zhak-moos",
+    "us": "Zhahk-moos"
+  },
+  "Jean Paul Gaultier": {
+    "slug": "13_jean_paul_gaultier",
+    "uk": "Zhon Paul Go-tee-ay",
+    "us": "Zhaan Paul Go-tyay"
+  },
+  "Karl Lagerfeld": {
+    "slug": "14_karl_lagerfeld",
+    "uk": "Karl Lah-guh-feld",
+    "us": "Karl Lah-ger-feld"
+  },
+  "Lanvin": {
+    "slug": "15_lanvin",
+    "uk": "Lon-van",
+    "us": "Lahn-vahn"
+  },
+  "Maison Kitsuné": {
+    "slug": "16_maison_kitsune",
+    "uk": "May-zon Kit-soo-nay",
+    "us": "May-zahn Kit-soo-nay"
+  },
+  "Maison Margiela": {
+    "slug": "17_maison_margiela",
+    "uk": "May-zon Mar-jell-uh",
+    "us": "May-zahn Mar-jell-uh"
+  },
+  "Moncler": {
+    "slug": "18_moncler",
+    "uk": "Mon-clair",
+    "us": "Mahn-clair"
+  },
+  "Rochas": {
+    "slug": "19_rochas",
+    "uk": "Ro-shass",
+    "us": "Ro-shahs"
+  },
+  "Yves Saint Laurent": {
+    "slug": "20_yves_saint_laurent",
+    "uk": "Eve San Lo-ron",
+    "us": "Eve San Luh-rahn"
+  },
+  "Bottega Veneta": {
+    "slug": "21_bottega_veneta",
+    "uk": "Bo-teg-uh Ven-ih-tuh",
+    "us": "Boh-teg-uh Ven-uh-tuh"
+  },
+  "Brunello Cucinelli": {
+    "slug": "22_brunello_cucinelli",
+    "uk": "Broo-nell-oh Koo-chi-nell-ee",
+    "us": "Broo-nell-oh Koo-chi-nell-ee"
+  },
+  "Dolce & Gabbana": {
+    "slug": "23_dolce_and_gabbana",
+    "uk": "Dol-chee and Guh-bah-nuh",
+    "us": "Dohl-chay and Guh-bah-nuh"
+  },
+  "Ermenegildo Zegna": {
+    "slug": "24_ermenegildo_zegna",
+    "uk": "Er-muh-nuh-jil-doh Zen-yuh",
+    "us": "Er-muh-nuh-jil-doh Zen-yuh"
+  },
+  "Giambattista Valli": {
+    "slug": "25_giambattista_valli",
+    "uk": "Jam-buh-tees-tuh Val-ee",
+    "us": "Jahm-buh-tees-tuh Val-ee"
+  },
+  "Loro Piana": {
+    "slug": "26_loro_piana",
+    "uk": "Lor-oh Pee-ah-nuh",
+    "us": "Lor-oh Pee-ah-nuh"
+  },
+  "Moschino": {
+    "slug": "27_moschino",
+    "uk": "Mos-kee-noh",
+    "us": "Mahs-kee-noh"
+  },
+  "Salvatore Ferragamo": {
+    "slug": "28_salvatore_ferragamo",
+    "uk": "Sal-vuh-tor-ee Fer-uh-gah-moh",
+    "us": "Sal-vuh-tor-ee Fer-uh-gah-moh"
+  },
+  "Versace": {
+    "slug": "29_versace",
+    "uk": "Ver-sah-chee",
+    "us": "Ver-sah-chee"
+  },
+  "Comme des Garçons": {
+    "slug": "30_comme_des_garcons",
+    "uk": "Kom day Gar-son",
+    "us": "Kahm day Gar-sohn"
+  },
+  "Issey Miyake": {
+    "slug": "31_issey_miyake",
+    "uk": "Iss-ee Mee-yah-kee",
+    "us": "Iss-ay Mee-yah-kee"
+  },
+  "Yohji Yamamoto": {
+    "slug": "32_yohji_yamamoto",
+    "uk": "Yoh-jee Yam-uh-moh-toh",
+    "us": "Yoh-jee Yah-muh-moh-toh"
+  },
+  "Balenciaga": {
+    "slug": "33_balenciaga",
+    "uk": "Buh-len-see-ah-guh",
+    "us": "Buh-len-see-ah-guh"
+  },
+  "Loewe": {
+    "slug": "34_loewe",
+    "uk": "Lo-ev-ay",
+    "us": "Loh-ev-ay"
+  },
+  "Vetements": {
+    "slug": "35_vetements",
+    "uk": "Vet-mon",
+    "us": "Vet-uh-mahn"
+  },
+  "Alexander McQueen": {
+    "slug": "36_alexander_mcqueen",
+    "uk": "Alexander McQueen",
+    "us": "Alexander McQueen"
+  },
+  "John Galliano": {
+    "slug": "37_john_galliano",
+    "uk": "John Gal-ee-ah-noh",
+    "us": "John Gal-ee-ah-noh"
+  },
+  "Marc Jacobs": {
+    "slug": "38_marc_jacobs",
+    "uk": "Marc Jacobs",
+    "us": "Marc Jacobs"
+  },
+  "Bustier": {
+    "slug": "39_bustier",
+    "uk": "bus-tee-ay",
+    "us": "boos-tee-ay"
+  },
+  "Toile": {
+    "slug": "40_toile",
+    "uk": "twahl",
+    "us": "twahl"
+  }
+};;
+
+  // ---- speech synthesis ----
+  const LANG_NAMES = {"fr-FR":"French","it-IT":"Italian","ja-JP":"Japanese","es-ES":"Spanish","de-DE":"German","en-GB":"English","en-US":"English"};
+  const COUNTRY_LANG = {"France":"fr-FR","Italy":"it-IT","Japan":"ja-JP","Spain":"es-ES","Switzerland":"fr-FR","United Kingdom":"accent","United States":"accent"};
+  // Brands whose original language differs from their country, or that need a different spoken spelling
+  const BRAND_SPEECH = {
+    "Comme des Garçons":{lang:"fr-FR"},
+    "Issey Miyake":{lang:"ja-JP", text:"イッセイ ミヤケ"},
+    "Yohji Yamamoto":{lang:"ja-JP", text:"ヨウジ ヤマモト"},
+    "Dolce & Gabbana":{lang:"it-IT", text:"Dolce e Gabbana"},
+    "Karl Lagerfeld":{lang:"de-DE"},
+    "Maison Kitsuné":{lang:"fr-FR"},
+    "Vetements":{lang:"fr-FR", text:"Vêtements"}
+  };
+  function brandSpeech(it){
+    const o = BRAND_SPEECH[it.name] || {}; let lang = o.lang || COUNTRY_LANG[it.country] || "accent";
+    if(lang==="accent") lang = state.accent==="uk" ? "en-GB" : "en-US";
+    return { lang, text: o.text || it.name };
+  }
+  const synth = window.speechSynthesis; let voices=[];
+  const pronAudio = $("pron-audio");
+  if(synth){ const load=()=>{voices=synth.getVoices(); if(state.mode==="brands") renderVoice(current());}; load(); synth.addEventListener && synth.addEventListener("voiceschanged", load); }
+  const PREFERRED_VOICES = {
+    "en-GB": ["Sonia", "Libby", "Ryan", "Google UK English Female", "Google UK English Male", "Martha", "Arthur", "Daniel", "Serena", "Oliver"],
+    "en-US": ["Aria", "Jenny", "Ava", "Emma", "Andrew", "Guy", "Google US English", "Samantha", "Alex", "Allison", "Nicky"],
+    "fr-FR": ["Denise", "Eloise", "Henri", "Google français", "Thomas", "Amélie", "Audrey"],
+    "it-IT": ["Elsa", "Isabella", "Diego", "Google italiano", "Alice", "Luca"],
+    "es-ES": ["Elvira", "Alvaro", "Google español", "Mónica", "Jorge"],
+    "ja-JP": ["Nanami", "Keita", "Google 日本語", "Kyoko", "Otoya"],
+    "de-DE": ["Katja", "Conrad", "Google Deutsch", "Anna", "Martin"]
+  };
+  const BLOCKED_VOICES = /Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Deranged|Fred|Good News|Hysterical|Junior|Kathy|Organ|Pipe Organ|Princess|Ralph|Superstar|Trinoids|Whisper|Wobble|Zarvox|espeak/i;
+
+  function pickVoice(lang) {
+    const clean = v => v.lang.replace("_", "-");
+    const pool = voices.filter(v => !BLOCKED_VOICES.test(v.name));
+    const exactPool = pool.filter(v => clean(v) === lang);
+
+    // 1. Prioritize Microsoft Edge Online Neural voices first
+    const edgeNeural = exactPool.find(v => /Natural|Online|Neural/i.test(v.name));
+    if (edgeNeural) return edgeNeural;
+
+    // 2. Match preferred high-quality voice names
+    const prefs = PREFERRED_VOICES[lang] || [];
+    for (const kw of prefs) {
+      const m = exactPool.find(v => v.name.includes(kw));
+      if (m) return m;
+    }
+
+    // 3. Fallback to any Enhanced/Premium/Google voice or last non-blocked match
+    return exactPool.find(v => /Google|Premium|Enhanced/i.test(v.name)) ||
+           exactPool[exactPool.length - 1] ||
+           pool.find(v => v.lang.toLowerCase().startsWith(lang.slice(0, 2).toLowerCase()));
+  }
+  let mp3Player = null, mp3Token = 0;
+  function stopAudio(){ mp3Token++; if(synth) synth.cancel(); if(mp3Player){ mp3Player.pause(); mp3Player.currentTime=0; } if(pronAudio){ pronAudio.pause(); pronAudio.currentTime=0; } $("speak-button").classList.remove("playing"); }
+  function playMp3(m, btn){
+    stopAudio();
+    const token = mp3Token;
+    const src = "brand_audio/" + state.accent + "/" + m.slug + "_" + state.accent + ".mp3";
+    mp3Player = new Audio(src);
+    if(btn) btn.classList.add("playing");
+    const clear = ()=>{ if(btn) btn.classList.remove("playing"); };
+    const fallback = ()=>{ clear(); speak(m[state.accent], btn); };
+    mp3Player.onended = ()=>{ if(token===mp3Token) clear(); };
+    mp3Player.onerror = ()=>{ if(token!==mp3Token) return; fallback(); };
+    const p = mp3Player.play();
+    if(p && p.catch) p.catch(err=>{ if(token!==mp3Token || (err && err.name==="AbortError")) return; fallback(); });
+  }
+  function speak(text, btn, langOverride){
+    if(!synth){ setMessage("Audio isn't supported in this browser.","try"); return; }
+    stopAudio(); const u = new SpeechSynthesisUtterance(text); let lang = langOverride || (state.accent==="uk"?"en-GB":"en-US");
+    let v = pickVoice(lang);
+    if(!v && lang.slice(0,2)!=="en"){ lang = state.accent==="uk"?"en-GB":"en-US"; text = current().name; u.text = text; v = pickVoice(lang); }
+    u.lang = lang; if(v) u.voice = v; u.rate = btn===$("speak-button") ? .92 : .98;
+    if(btn) { btn.classList.add("playing"); u.onend=u.onerror=()=>btn.classList.remove("playing"); }
+    synth.speak(u);
+  }
+  function playEntry(it){
+    if(state.mode==="brands" && state.voiceMode==="native"){ const sp = brandSpeech(it); speak(sp.text, $("speak-button"), sp.lang); return; }
+    const m = MP3_MAP[it.name];
+    if(m){ playMp3(m, $("speak-button")); return; }
+    speak(it.name, $("speak-button"));
+  }
+  $("speak-button").addEventListener("click", ()=>playEntry(current()));
+  document.querySelectorAll("#voice-toggle button").forEach(b=>b.addEventListener("click", ()=>{ stopAudio(); state.voiceMode=b.dataset.voice; save(); renderVoice(current()); }));
+  $("example-audio").addEventListener("click", ()=>speak(current().example));
+
+  // ---- speech recognition (practice) ----
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  let rec=null, listening=false, noResultTimer=null, failCount=0;
+  const UA = navigator.userAgent || "";
+  const isIOS = /iPad|iPhone|iPod/.test(UA) || (navigator.platform==="MacIntel" && navigator.maxTouchPoints>1);
+  function setMessage(t,cls){ const p=$("practice-message"); p.textContent=t; p.className = cls||""; }
+
+  (function envHint(){
+    const s=$("speech-support"); let msg="";
+    if(isIOS && /CriOS|FxiOS|EdgiOS/.test(UA)) msg="On iPhone and iPad, speech checking only works in Safari. Use “Record & compare”, or open this page in Safari.";
+    else if(/Firefox/.test(UA)) msg="Firefox doesn't support speech checking. Use Chrome, Edge or Safari, or try “Record & compare”.";
+    else if(/EdgA/.test(UA)) msg="Edge on Android doesn't support speech checking. Try Chrome, or use “Record & compare”.";
+    else if(isIOS) msg="Speech checking can be unreliable on iPhone and iPad. If it doesn't hear you, use “Record & compare”.";
+    else if(!SR) msg="Speech checking works in Chrome, Edge and Safari. You can still use “Record & compare”.";
+    if(msg){ s.hidden=false; s.textContent=msg; }
+    if(!SR){ const b=$("record-button"); b.disabled=true; b.style.opacity=.5; }
+  })();
+
+  function stopListening(){ clearTimeout(noResultTimer); if(rec && listening){ try{rec.stop()}catch(e){} } listening=false; $("record-button").classList.remove("listening"); $("record-label").textContent="Start speaking"; }
+  function norm(s){ return fold(s).replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim(); }
+  function lev(a,b){ const d=[...Array(a.length+1)].map((_,i)=>[i]); for(let j=1;j<=b.length;j++) d[0][j]=j;
+    for(let i=1;i<=a.length;i++) for(let j=1;j<=b.length;j++) d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1)); return d[a.length][b.length]; }
+  function score(heard,target){
+    const h=norm(heard).replace(/ /g,""), t=norm(target).replace(/ /g,""); if(!t) return 0;
+    if(h===t) return 1; if(h.includes(t)) return .95;
+    return 1 - lev(h,t)/Math.max(t.length,h.length,1);
+  }
+  const ACCEPTED_HOMOPHONES = {
+  "Alaïa": [
+    "alaia",
+    "ah lye uh",
+    "uh lye uh",
+    "alaya",
+    "a liar"
+  ],
+  "Balmain": [
+    "balmain",
+    "bal man",
+    "bal mahn",
+    "bell man"
+  ],
+  "Cartier": [
+    "cartier",
+    "kar tee ay",
+    "car tee ay",
+    "cardier"
+  ],
+  "Céline": [
+    "celine",
+    "seh leen",
+    "suh leen",
+    "saline",
+    "selene"
+  ],
+  "Chanel": [
+    "chanel",
+    "shanell",
+    "shuh nel"
+  ],
+  "Chloé": [
+    "chloe",
+    "klo ee",
+    "cloey"
+  ],
+  "Christian Dior": [
+    "christian dior",
+    "christian dee or",
+    "dior"
+  ],
+  "Christian Louboutin": [
+    "christian louboutin",
+    "christian loo boo tan",
+    "louboutin",
+    "loo boo tan",
+    "lu bu tan"
+  ],
+  "Givenchy": [
+    "givenchy",
+    "zhee von shee",
+    "jee von shee",
+    "zhi von shi",
+    "give on she"
+  ],
+  "Goyard": [
+    "goyard",
+    "goy ahd",
+    "goy ard",
+    "go yard"
+  ],
+  "Hermès": [
+    "hermes",
+    "air mez",
+    "er mez",
+    "air mes",
+    "her mez"
+  ],
+  "Jacquemus": [
+    "jacquemus",
+    "zhak moos",
+    "jack moos",
+    "jacque moose",
+    "zhahk moos"
+  ],
+  "Jean Paul Gaultier": [
+    "jean paul gaultier",
+    "zhon paul go tee ay",
+    "john paul go tee ay",
+    "gaultier"
+  ],
+  "Karl Lagerfeld": [
+    "karl lagerfeld",
+    "carl lagerfeld",
+    "karl lah guh feld"
+  ],
+  "Lanvin": [
+    "lanvin",
+    "lon van",
+    "lahn vahn",
+    "long van"
+  ],
+  "Maison Kitsuné": [
+    "maison kitsune",
+    "may zon kit soo nay",
+    "kitsune"
+  ],
+  "Maison Margiela": [
+    "maison margiela",
+    "may zon mar jell uh",
+    "margiela",
+    "mar jella"
+  ],
+  "Moncler": [
+    "moncler",
+    "mon clair",
+    "mahn clair",
+    "montclair",
+    "mon clear"
+  ],
+  "Rochas": [
+    "rochas",
+    "ro shass",
+    "ro shahs",
+    "roshas"
+  ],
+  "Yves Saint Laurent": [
+    "yves saint laurent",
+    "eve san lo ron",
+    "eve saint laurent",
+    "saint laurent",
+    "san lo ron"
+  ],
+  "Bottega Veneta": [
+    "bottega veneta",
+    "bo teg uh ven ih tuh",
+    "bottega",
+    "bo tega veneta"
+  ],
+  "Brunello Cucinelli": [
+    "brunello cucinelli",
+    "broo nell oh koo chi nell ee",
+    "cucinelli"
+  ],
+  "Dolce & Gabbana": [
+    "dolce and gabbana",
+    "dolce gabbana",
+    "dol chee and guh bah nuh",
+    "dohl chay and gabbana"
+  ],
+  "Ermenegildo Zegna": [
+    "ermenegildo zegna",
+    "zen yuh",
+    "zegna",
+    "zainya"
+  ],
+  "Giambattista Valli": [
+    "giambattista valli",
+    "jam buh tees tuh val ee",
+    "valli"
+  ],
+  "Loro Piana": [
+    "loro piana",
+    "lor oh pee ah nuh",
+    "laura piana"
+  ],
+  "Moschino": [
+    "moschino",
+    "mos kee noh",
+    "mahs kee noh",
+    "moskino",
+    "mosquito"
+  ],
+  "Salvatore Ferragamo": [
+    "salvatore ferragamo",
+    "ferragamo",
+    "fer uh gah moh"
+  ],
+  "Versace": [
+    "versace",
+    "ver sah chee",
+    "versachi"
+  ],
+  "Comme des Garçons": [
+    "comme des garcons",
+    "kom day gar son",
+    "come day garcon",
+    "calm day garcon"
+  ],
+  "Issey Miyake": [
+    "issey miyake",
+    "iss ee mee yah kee",
+    "easy miyake",
+    "miyake"
+  ],
+  "Yohji Yamamoto": [
+    "yohji yamamoto",
+    "yoh jee yam uh moh toh",
+    "yamamoto"
+  ],
+  "Balenciaga": [
+    "balenciaga",
+    "buh len see ah guh",
+    "valenciaga"
+  ],
+  "Loewe": [
+    "loewe",
+    "lo ev ay",
+    "loh ev ay",
+    "low ev ay",
+    "low way",
+    "lo weh vay"
+  ],
+  "Vetements": [
+    "vetements",
+    "vet mon",
+    "vet uh mahn",
+    "vetmont"
+  ],
+  "Toile": [
+    "toile",
+    "twahl",
+    "twal",
+    "twall"
+  ],
+  "Bustier": [
+    "bustier",
+    "bus tee ay",
+    "boos tee ay"
+  ]
+};
+
+  function judge(alts,target){
+    const targets = [target, ...(ACCEPTED_HOMOPHONES[target] || [])];
+    let best=alts[0], bs=-1;
+    alts.forEach(a=>{ targets.forEach(t=>{ const s=score(a,t); if(s>bs){ bs=s; best=a; } }); });
+    const lenient = state.mode==="brands" ? .6 : .7;  // brand names from other languages are harder to recognise
+    if(bs>=.82) return ["good","Great pronunciation! I heard “"+target+"”."];
+    if(bs>=lenient) return ["good","Very close! I heard “"+best+"”. Listen once more and try again."];
+    return ["try","I heard “"+best+"”. Listen to the model, then try again."];
+  }
+  function noteFail(msg){ failCount++; setMessage(msg + (failCount>=2 ? " Tip: try “Test microphone” or “Record & compare” below." : ""),"try"); }
+
+  $("record-button").addEventListener("click", ()=>{
+    if(!SR) return; if(listening){ stopListening(); return; }
+    stopAudio(); stopTools();
+    rec = new SR();
+    rec.lang = state.mode==="brands" && state.voiceMode==="native" ? brandSpeech(current()).lang : (state.accent==="uk"?"en-GB":"en-US");
+    rec.maxAlternatives=5; rec.interimResults=true; rec.continuous=false;
+    let handled=false, lastInterim="";
+    rec.onstart=()=>{ listening=true; $("record-button").classList.add("listening"); $("record-label").textContent="Listening… tap to stop"; setMessage("Listening… speak now.");
+      noResultTimer=setTimeout(()=>{ try{rec.stop()}catch(e){} }, 8000); };
+    rec.onresult=e=>{ const r=e.results[0]; if(!r) return;
+      if(r.isFinal){ handled=true; failCount=0; const alts=[...r].map(a=>a.transcript); const [cls,msg]=judge(alts,current().name); setMessage(msg,cls); }
+      else { lastInterim = r[0] ? r[0].transcript : lastInterim; } };
+    rec.onnomatch=()=>{ handled=true; noteFail("I couldn't recognise that. Try again a little slower and clearer."); };
+    rec.onerror=e=>{ handled=true;
+      const m={ "no-speech":"I couldn't hear anything. Check your microphone and start speaking right after tapping.",
+        "audio-capture":"No microphone was found. Plug in or enable a microphone.",
+        "not-allowed":"Microphone access is blocked. Allow it in your browser's site settings, then reload the page.",
+        "service-not-allowed":"Speech checking is turned off for this browser or device. Try Chrome, or use “Record & compare”.",
+        "network":"Speech checking needs an internet connection. Check your connection and try again.",
+        "language-not-supported":"This browser doesn't support speech checking for this accent. Switch accent or use “Record & compare”." };
+      if(e.error==="aborted") return; noteFail(m[e.error]||"Couldn't check that. Please try again."); };
+    rec.onend=()=>{ clearTimeout(noResultTimer); listening=false; $("record-button").classList.remove("listening"); $("record-label").textContent="Start speaking";
+      if(!handled && lastInterim){ handled=true; failCount=0; const [cls,msg]=judge([lastInterim],current().name); setMessage(msg,cls); }
+      else if(!handled) noteFail("I couldn't hear anything. Check your microphone (try “Test microphone”) and start speaking right after tapping."); };
+    try{ rec.start(); }catch(err){ noteFail("Couldn't start the microphone. Please try again."); }
+  });
+
+  // ---- microphone test and record & compare (work in every browser with a microphone) ----
+  let toolStream=null, toolCtx=null, mediaRec=null, playUrl=null, levelRaf=0, recTimer=null;
+  function releaseTool(){ cancelAnimationFrame(levelRaf); if(toolStream){ toolStream.getTracks().forEach(t=>t.stop()); toolStream=null; }
+    if(toolCtx){ try{toolCtx.close()}catch(e){} toolCtx=null; } $("level-wrap").hidden=true; }
+  function resetShadowButton(){ const b=$("shadow-button"); b.classList.remove("rec-on"); b.querySelector("span").textContent="Record & compare"; }
+  function stopTools(){ clearTimeout(recTimer); if(mediaRec && mediaRec.state==="recording"){ try{mediaRec.stop()}catch(e){} } releaseTool(); resetShadowButton(); }
+  function getMic(){ if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return Promise.reject({name:"Unsupported"});
+    return navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true, noiseSuppression:true, autoGainControl:true}}); }
+  function micErrorText(e){ const n=e&&e.name;
+    if(n==="NotAllowedError"||n==="SecurityError") return "Microphone access is blocked. Allow it in your browser's site settings, then reload the page.";
+    if(n==="NotFoundError"||n==="OverconstrainedError") return "No microphone was found. Plug in or enable a microphone.";
+    if(n==="NotReadableError") return "The microphone is being used by another app. Close it and try again.";
+    if(n==="Unsupported") return "This browser can't reach the microphone here. Open the page over https in Chrome, Edge or Safari.";
+    return "Couldn't use the microphone. Please try again."; }
+
+  $("mic-test").addEventListener("click", async ()=>{
+    stopListening(); stopAudio(); stopTools(); setMessage("Testing microphone… say a few words.");
+    try{ toolStream = await getMic(); }catch(e){ setMessage(micErrorText(e),"try"); return; }
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if(!AC){ releaseTool(); setMessage("Microphone access works, but this browser can't show a level meter.","good"); return; }
+    toolCtx = new AC(); try{ if(toolCtx.state==="suspended") await toolCtx.resume(); }catch(e){}
+    const an = toolCtx.createAnalyser(); an.fftSize=1024; toolCtx.createMediaStreamSource(toolStream).connect(an);
+    const buf=new Uint8Array(an.fftSize); let peak=0; const t0=performance.now(); $("level-wrap").hidden=false;
+    (function loop(){
+      an.getByteTimeDomainData(buf); let sum=0; for(let i=0;i<buf.length;i++){ const x=(buf[i]-128)/128; sum+=x*x; }
+      const rms=Math.sqrt(sum/buf.length); peak=Math.max(peak,rms); $("level-bar").style.width=Math.min(100,rms*400)+"%";
+      if(performance.now()-t0<3500){ levelRaf=requestAnimationFrame(loop); return; }
+      releaseTool();
+      if(peak<.01) setMessage("Almost no sound detected. Check the right microphone is selected and not muted, then move closer.","try");
+      else if(peak<.03) setMessage("Sound detected, but it's quiet. Speak louder or move closer to the microphone.","try");
+      else setMessage("Your microphone is working. Now try “Start speaking”.","good");
+    })();
+  });
+
+  if(!(window.MediaRecorder && navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) $("shadow-button").hidden = true;
+  $("shadow-button").addEventListener("click", async ()=>{
+    if(mediaRec && mediaRec.state==="recording"){ mediaRec.stop(); return; }
+    stopListening(); stopAudio(); releaseTool();
+    try{ toolStream = await getMic(); }catch(e){ setMessage(micErrorText(e),"try"); return; }
+    const chunks=[]; try{ mediaRec = new MediaRecorder(toolStream); }catch(e){ releaseTool(); setMessage("This browser can't record audio here.","try"); return; }
+    mediaRec.ondataavailable=e=>{ if(e.data && e.data.size) chunks.push(e.data); };
+    mediaRec.onstop=()=>{
+      clearTimeout(recTimer); const type=mediaRec.mimeType||"audio/webm"; releaseTool(); resetShadowButton();
+      if(!chunks.length){ setMessage("Nothing was recorded. Please try again.","try"); return; }
+      if(playUrl) URL.revokeObjectURL(playUrl); playUrl=URL.createObjectURL(new Blob(chunks,{type}));
+      const a=$("playback"); a.src=playUrl; a.hidden=false; setMessage("Playing your recording, then the model. Listen for differences.");
+      a.onended=()=>{ a.onended=null; $("speak-button").click(); };
+      a.play().catch(()=>setMessage("Tap play to hear your recording, then the speaker button to hear the model."));
+    };
+    mediaRec.start(); const b=$("shadow-button"); b.classList.add("rec-on"); b.querySelector("span").textContent="Stop recording";
+    setMessage("Recording… say it now, then tap Stop (it stops by itself after 5 seconds).");
+    recTimer=setTimeout(()=>{ if(mediaRec && mediaRec.state==="recording") mediaRec.stop(); }, 5000);
+  });
+
+  // ---- init ----
+  const h = location.hash.slice(1); if(MODES[h]) state.mode = h;
+  renderAll();
+})();
+</script>
+</body>
+</html>
