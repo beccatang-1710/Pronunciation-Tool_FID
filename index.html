@@ -145,6 +145,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 .record-button.listening .mic-dot{animation:pulse 1s infinite}
 @keyframes pulse{50%{opacity:.25;transform:scale(1.4)}}
 .practice-hint{flex-basis:100%;margin:0;font-size:.9rem;line-height:1.55;color:var(--navy);background:var(--teal-soft);border-radius:10px;padding:10px 14px}
+.recognition-result{flex-basis:100%;border:1px solid #d8e3e8;border-radius:10px;background:#fff;padding:12px 14px;display:grid;gap:7px}.recognition-result[hidden]{display:none}.recognition-result .result-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.recognition-result .result-rate{font-size:1.35rem;font-weight:800;color:var(--navy)}.recognition-result .result-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:#526874;font-weight:700}.recognition-result .result-heard{font-size:.95rem;color:var(--navy);overflow-wrap:anywhere}.recognition-result .result-note{font-size:.8rem;line-height:1.45;color:#5c6d76;margin:0}
 .practice-hint strong{font-weight:700}
 .practice-tools{flex-basis:100%;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .practice-tools .text-action{margin-top:0}
@@ -325,6 +326,11 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
           <span><h3 id="practice-title">Your turn</h3><p id="practice-message">Say the word aloud and check your pronunciation.</p></span></div>
         <button id="record-button" class="record-button" type="button"><span class="mic-dot"></span><span id="record-label">Start speaking</span></button>
         <p class="practice-hint"><strong>How to practise:</strong> 1. Tap the speaker to listen. &nbsp;2. Tap <em>Start speaking</em> and say the word clearly. &nbsp;3. Use <em>Record &amp; compare</em> to hear your own voice.</p>
+        <div id="recognition-result" class="recognition-result" aria-live="polite" hidden>
+          <div class="result-top"><span class="result-label">Text recognition match (estimate)</span><strong id="recognition-rate" class="result-rate">—%</strong></div>
+          <div class="result-heard">Recognised text: <strong id="recognised-text">—</strong></div>
+          <p class="result-note">This percentage measures how closely the speech-to-text result matches the written brand name. It is NOT a pronunciation accuracy score and is not calculated from the IPA. The IPA above is a visual pronunciation reference; this browser recogniser does not compare your sounds with IPA phonemes.</p>
+        </div>
         <div class="practice-tools">
           <button id="mic-test" class="text-action" type="button"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h3l3-7 4 14 3-7h5"/></svg>Test microphone</button>
           <button id="shadow-button" class="text-action" type="button"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg><span>Record &amp; compare</span></button>
@@ -2096,20 +2102,32 @@ const GLOSSARY = {
   ]
 };
 
+  function showRecognitionMatch(alts,target){
+    const candidates=(alts||[]).filter(x=>String(x||"").trim());
+    if(!candidates.length) return;
+    // This is a transcript-to-spelling similarity estimate, not a phonetic/IPA assessment.
+    const best=candidates.reduce((a,b)=>score(b,target)>score(a,target)?b:a,candidates[0]);
+    const pct=Math.max(0,Math.min(100,Math.round(score(best,target)*100)));
+    $("recognition-rate").textContent=pct+"%";
+    $("recognised-text").textContent="“"+best+"”";
+    $("recognition-result").hidden=false;
+  }
+  function clearRecognitionMatch(){ $("recognition-result").hidden=true; $("recognition-rate").textContent="—%"; $("recognised-text").textContent="—"; }
   function judge(alts,target){
+    showRecognitionMatch(alts,target);
     const targets = [target, ...(ACCEPTED_HOMOPHONES[target] || [])];
     let best=alts[0], bs=-1;
     alts.forEach(a=>{ targets.forEach(t=>{ const s=score(a,t); if(s>bs){ bs=s; best=a; } }); });
     const lenient = state.mode==="brands" ? .6 : .7;  // brand names from other languages are harder to recognise
-    if(bs>=.82) return ["good","Great pronunciation! I heard “"+target+"”."];
-    if(bs>=lenient) return ["good","Very close! I heard “"+best+"”. Listen once more and try again."];
-    return ["try","I heard “"+best+"”. Listen to the model, then try again."];
+    if(bs>=.82) return ["good","The recogniser transcribed the target successfully. This does not independently verify pronunciation accuracy."];
+    if(bs>=lenient) return ["good","The recognised text is close to the target. Listen once more and try again."];
+    return ["try","I heard “"+best+"”. The text match is low; listen to the model, then try again."];
   }
   function noteFail(msg){ failCount++; setMessage(msg + (failCount>=2 ? " Tip: try “Test microphone” or “Record & compare” below." : ""),"try"); }
 
   $("record-button").addEventListener("click", ()=>{
     if(!SR) return; if(listening){ stopListening(); return; }
-    stopAudio(); stopTools();
+    stopAudio(); stopTools(); clearRecognitionMatch();
     rec = new SR();
     rec.lang = state.mode==="brands" && state.voiceMode==="native" ? brandSpeech(current()).lang : (state.accent==="uk"?"en-GB":"en-US");
     rec.maxAlternatives=5; rec.interimResults=true; rec.continuous=false;
