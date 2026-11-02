@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#103b53" />
+<meta name="theme-color" content="#2c3e2d" />
 <meta name="description" content="Hear, understand, and practise fashion vocabulary and brand names." />
-<title>Fashion Glossary · HKDI</title>
+<title>Fashion and Image Design · HKDI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --navy:#103b53; --navy-2:#0b2a3b; --teal:#1f7a8c; --teal-soft:#e4f1f4; --gold:#d9a441; --gold-soft:#fbf3e1;
-  --bg:#f5f7f8; --card:#fff; --ink:#14232d; --muted:#5b6b75; --line:#dde4e8; --ok:#1d7a4d; --ok-soft:#e3f4ea; --warn:#a15c07;
-  --radius:14px; --shadow:0 1px 2px rgba(16,59,83,.06),0 6px 20px rgba(16,59,83,.06);
+  --navy:#2c3e2d; --navy-2:#1f2d20; --teal:#526d4e; --teal-soft:#e8efe6; --gold:#d9a441; --gold-soft:#fbf3e1;
+  --bg:#e8efe6; --card:#fff; --ink:#1a261b; --muted:#556656; --line:#cfd9cc; --ok:#1d7a4d; --ok-soft:#e3f4ea; --warn:#a15c07;
+  --radius:14px; --shadow:0 1px 2px rgba(44,62,45,.06),0 6px 20px rgba(44,62,45,.06);
   --sans:"DM Sans","Noto Sans","Segoe UI",system-ui,sans-serif; --serif:"Source Serif 4",Georgia,serif;
 }
 *{box-sizing:border-box}
@@ -68,12 +68,12 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 .browser-heading{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
 .browser-heading h2{font-size:1.1rem;margin:0;color:var(--navy)}
 .count-label{font-size:.82rem;color:var(--muted)}
-.search-box{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:#fbfcfc;color:var(--muted)}
+.search-box{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:#f7faf6;color:var(--muted)}
 .search-box:focus-within{border-color:var(--teal);background:#fff}
 .search-box input{flex:1;border:0;outline:0;background:none;min-width:0;color:var(--ink)}
 .search-box kbd{font-size:.72rem;border:1px solid var(--line);border-radius:5px;padding:0 6px;background:#fff}
 .filter-row{margin-top:10px}
-.filter-row select{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:#fbfcfc}
+.filter-row select{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:#f7faf6}
 .term-list{margin-top:12px;max-height:56vh;overflow:auto;display:flex;flex-direction:column;gap:3px;padding-right:2px}
 .term-item{display:flex;align-items:center;justify-content:space-between;gap:8px;border:0;background:none;text-align:left;padding:9px 11px;border-radius:9px;border-left:3px solid transparent}
 .term-item:hover{background:var(--teal-soft)}
@@ -96,11 +96,11 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 .word-heading h2{font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0;color:var(--navy);overflow-wrap:anywhere}
 .ipa-line{display:flex;align-items:center;gap:10px;margin:8px 0 0;font-size:1.15rem;flex-wrap:wrap}
 .ipa-label{font-size:.7rem;font-weight:700;letter-spacing:.08em;background:var(--teal-soft);color:var(--teal);padding:2px 8px;border-radius:6px}
-.round-audio{display:grid;place-items:center;flex:none;width:64px;height:64px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:1.7rem;box-shadow:0 4px 14px rgba(16,59,83,.3);transition:transform .15s,background .15s}
+.round-audio{display:grid;place-items:center;flex:none;width:64px;height:64px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:1.7rem;box-shadow:0 4px 14px rgba(44,62,45,.3);transition:transform .15s,background .15s}
 .round-audio:hover{background:var(--teal);transform:scale(1.05)}
 .round-audio.playing{background:var(--gold);color:var(--navy-2)}
 
-.accent-toggle{display:inline-flex;background:#eef2f4;border-radius:999px;padding:3px;gap:2px}
+.accent-toggle{display:inline-flex;background:#e8efe6;border-radius:999px;padding:3px;gap:2px}
 .accent-toggle button{border:0;background:none;padding:4px 14px;border-radius:999px;font-size:.82rem;font-weight:600;color:var(--muted)}
 .accent-toggle button[aria-pressed="true"]{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(0,0,0,.15)}
 
@@ -131,7 +131,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 .pexels-note{font-size:.85rem!important;color:var(--muted);margin-top:8px!important}
 
 /* practice */
-.practice-panel{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px;padding:16px 18px;border:1.5px dashed #b6c6cf;border-radius:12px;background:#fafcfd}
+.practice-panel{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px;padding:16px 18px;border:1.5px dashed #b5c4b1;border-radius:12px;background:#f7faf6}
 .practice-copy{display:flex;align-items:center;gap:12px}
 .practice-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--teal-soft);color:var(--teal);font-size:1.3rem}
 .practice-copy h3{margin:0;font-size:1rem;color:var(--navy)}
@@ -145,12 +145,11 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 .record-button.listening .mic-dot{animation:pulse 1s infinite}
 @keyframes pulse{50%{opacity:.25;transform:scale(1.4)}}
 .practice-hint{flex-basis:100%;margin:0;font-size:.9rem;line-height:1.55;color:var(--navy);background:var(--teal-soft);border-radius:10px;padding:10px 14px}
-.recognition-result{flex-basis:100%;border:1px solid #d8e3e8;border-radius:10px;background:#fff;padding:12px 14px;display:grid;gap:7px}.recognition-result[hidden]{display:none}.recognition-result .result-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.recognition-result .result-rate{font-size:1.35rem;font-weight:800;color:var(--navy)}.recognition-result .result-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:#526874;font-weight:700}.recognition-result .result-heard{font-size:.95rem;color:var(--navy);overflow-wrap:anywhere}.recognition-result .result-note{font-size:.8rem;line-height:1.45;color:#5c6d76;margin:0}
 .practice-hint strong{font-weight:700}
 .practice-tools{flex-basis:100%;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .practice-tools .text-action{margin-top:0}
 .practice-tools .rec-on{color:#c0392b}
-.level{flex-basis:100%;height:8px;border-radius:99px;background:#e5ebee;overflow:hidden}
+.level{flex-basis:100%;height:8px;border-radius:99px;background:#dce5d9;overflow:hidden}
 .level span{display:block;height:100%;width:0;background:var(--teal);transition:width .08s}
 #playback{flex-basis:100%;width:100%;height:40px}
 .trouble{flex-basis:100%;font-size:.88rem;color:var(--muted)}
@@ -177,7 +176,6 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 }
 @media (max-width:560px){
   .home-tabs{grid-template-columns:1fr}
-  .brand-name{display:none}
   .study-label{display:none}
   .tab-count{display:none}
   .round-audio{width:54px;height:54px}
@@ -213,6 +211,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 <header class="topbar">
   <a class="brand" href="#" aria-label="HKDI home">
     <span class="brand-mark">HKDI</span>
+    <span class="brand-name">Professional English Studio</span>
   </a>
   <nav class="topnav" aria-label="Main navigation">
     <a class="nav-link active" href="#glossary">Glossary</a>
@@ -224,9 +223,8 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 <main id="glossary" class="page-shell">
   <section class="page-intro" aria-labelledby="page-title">
     <div class="intro-copy">
-      <div class="breadcrumb"><span>Learning resources</span><span aria-hidden="true">/</span><span>Fashion</span></div>
-      <h1 id="page-title">Fashion glossary</h1>
-      <p>Listen to the pronunciation, read the meaning, and practise speaking.</p>
+      <h1 id="page-title">Fashion and Image Design</h1>
+      <p>Choose a term. Learn the correct pronunciation.</p>
     </div>
     <div class="intro-tools">
       <div class="lang-tool">
@@ -247,12 +245,12 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
   <div class="home-tabs" role="tablist" aria-label="Glossary sections">
     <button class="home-tab" role="tab" id="tab-terms" data-mode="terms" aria-selected="true" aria-controls="panel">
       <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 7l3 3v10h10V10l3-3-8-4Z"/><path d="M9 4.5c.6 1.7 1.7 2.5 3 2.5s2.4-.8 3-2.5"/></svg></span>
-      <span class="tab-text"><strong>Common fashion terms</strong><span>Fabrics, techniques and style vocabulary</span></span>
+      <span class="tab-text"><strong>Professional terms</strong><span>Fabrics, techniques and style vocabulary</span></span>
       <span class="tab-count" id="count-terms"></span>
     </button>
     <button class="home-tab" role="tab" id="tab-brands" data-mode="brands" aria-selected="false" aria-controls="panel">
       <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9h18l-1.5-5h-15L3 9Z"/><path d="M5 9v11h14V9"/><path d="M10 20v-6h4v6"/></svg></span>
-      <span class="tab-text"><strong>Brand names</strong><span>Fashion houses and how to say them</span></span>
+      <span class="tab-text"><strong>Global brands</strong><span>Fashion houses and how to say them</span></span>
       <span class="tab-count" id="count-brands"></span>
     </button>
   </div>
@@ -296,11 +294,11 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
       <div id="term-view">
         <section class="block" aria-labelledby="meaning-label"><h3 id="meaning-label">Meaning</h3><p id="term-meaning"></p><p id="zh-meaning" class="zh zh-block" hidden></p></section>
         <section class="block example-block" aria-labelledby="example-label">
-          <div class="example-heading"><h3 id="example-label">In a sentence</h3><span class="example-tag">EXAMPLE</span></div>
+          <div class="example-heading"><h3 id="example-label">In a sentence</h3></div>
           <p id="term-example"></p>
           <p id="zh-example" class="zh zh-block" hidden></p>
           <button id="example-audio" class="text-action" type="button">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg>Hear example
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg>Hear the example
           </button>
         </section>
       </div>
@@ -326,11 +324,6 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
           <span><h3 id="practice-title">Your turn</h3><p id="practice-message">Say the word aloud and check your pronunciation.</p></span></div>
         <button id="record-button" class="record-button" type="button"><span class="mic-dot"></span><span id="record-label">Start speaking</span></button>
         <p class="practice-hint"><strong>How to practise:</strong> 1. Tap the speaker to listen. &nbsp;2. Tap <em>Start speaking</em> and say the word clearly. &nbsp;3. Use <em>Record &amp; compare</em> to hear your own voice.</p>
-        <div id="recognition-result" class="recognition-result" aria-live="polite" hidden>
-          <div class="result-top"><span class="result-label">Text recognition match (estimate)</span><strong id="recognition-rate" class="result-rate">—%</strong></div>
-          <div class="result-heard">Recognised text: <strong id="recognised-text">—</strong></div>
-          <p class="result-note">This percentage measures how closely the speech-to-text result matches the written brand name. It is NOT a pronunciation accuracy score and is not calculated from the IPA. The IPA above is a visual pronunciation reference; this browser recogniser does not compare your sounds with IPA phonemes.</p>
-        </div>
         <div class="practice-tools">
           <button id="mic-test" class="text-action" type="button"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h3l3-7 4 14 3-7h5"/></svg>Test microphone</button>
           <button id="shadow-button" class="text-action" type="button"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg><span>Record &amp; compare</span></button>
@@ -361,7 +354,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
     </article>
   </section>
 </main>
-<footer class="site-footer"><span>Department of Communication Design</span><span>Learning through language</span></footer>
+<footer class="site-footer"><span>Learning through language</span></footer>
 
 <script>
 /* Data generated from "LTDC - Glossory List FID.xlsx" (Sheet1) */
@@ -1379,8 +1372,8 @@ const GLOSSARY = {
   const $ = id => document.getElementById(id);
   const STORE_KEY = "dcd-fashion-glossary-v2";
   const MODES = {
-    terms:  { items: GLOSSARY.terms,  noun:"term",  nounPlural:"terms",  heading:"Fashion terms", placeholder:"Find a term",  label:"WORD STUDY" },
-    brands: { items: GLOSSARY.brands, noun:"brand", nounPlural:"brands", heading:"Brand names",   placeholder:"Find a brand", label:"BRAND STUDY" }
+    terms:  { items: GLOSSARY.terms,  noun:"term",  nounPlural:"terms",  heading:"Professional terms", placeholder:"Find a term",  label:"WORD STUDY" },
+    brands: { items: GLOSSARY.brands, noun:"brand", nounPlural:"brands", heading:"Global brands",   placeholder:"Find a brand", label:"BRAND STUDY" }
   };
   const state = { mode:"terms", accent:"uk", voiceMode:"english", zh:"off", index:{terms:0,brands:0}, query:"", country:"All", done:{terms:[],brands:[]} };
 
@@ -2102,32 +2095,20 @@ const GLOSSARY = {
   ]
 };
 
-  function showRecognitionMatch(alts,target){
-    const candidates=(alts||[]).filter(x=>String(x||"").trim());
-    if(!candidates.length) return;
-    // This is a transcript-to-spelling similarity estimate, not a phonetic/IPA assessment.
-    const best=candidates.reduce((a,b)=>score(b,target)>score(a,target)?b:a,candidates[0]);
-    const pct=Math.max(0,Math.min(100,Math.round(score(best,target)*100)));
-    $("recognition-rate").textContent=pct+"%";
-    $("recognised-text").textContent="“"+best+"”";
-    $("recognition-result").hidden=false;
-  }
-  function clearRecognitionMatch(){ $("recognition-result").hidden=true; $("recognition-rate").textContent="—%"; $("recognised-text").textContent="—"; }
   function judge(alts,target){
-    showRecognitionMatch(alts,target);
     const targets = [target, ...(ACCEPTED_HOMOPHONES[target] || [])];
     let best=alts[0], bs=-1;
     alts.forEach(a=>{ targets.forEach(t=>{ const s=score(a,t); if(s>bs){ bs=s; best=a; } }); });
     const lenient = state.mode==="brands" ? .6 : .7;  // brand names from other languages are harder to recognise
-    if(bs>=.82) return ["good","The recogniser transcribed the target successfully. This does not independently verify pronunciation accuracy."];
-    if(bs>=lenient) return ["good","The recognised text is close to the target. Listen once more and try again."];
-    return ["try","I heard “"+best+"”. The text match is low; listen to the model, then try again."];
+    if(bs>=.82) return ["good","Great pronunciation! I heard “"+target+"”."];
+    if(bs>=lenient) return ["good","Very close! I heard “"+best+"”. Listen once more and try again."];
+    return ["try","I heard “"+best+"”. Listen to the model, then try again."];
   }
   function noteFail(msg){ failCount++; setMessage(msg + (failCount>=2 ? " Tip: try “Test microphone” or “Record & compare” below." : ""),"try"); }
 
   $("record-button").addEventListener("click", ()=>{
     if(!SR) return; if(listening){ stopListening(); return; }
-    stopAudio(); stopTools(); clearRecognitionMatch();
+    stopAudio(); stopTools();
     rec = new SR();
     rec.lang = state.mode==="brands" && state.voiceMode==="native" ? brandSpeech(current()).lang : (state.accent==="uk"?"en-GB":"en-US");
     rec.maxAlternatives=5; rec.interimResults=true; rec.continuous=false;
