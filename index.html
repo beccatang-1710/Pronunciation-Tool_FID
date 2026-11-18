@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#2c3e2d" />
+<meta name="theme-color" content="#103b53" />
 <meta name="description" content="Hear, understand, and practise fashion vocabulary and brand names." />
-<title>Fashion and Image Design · HKDI</title>
+<title>Fashion Glossary · HKDI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --navy:#2c3e2d; --navy-2:#1f2d20; --teal:#526d4e; --teal-soft:#e8efe6; --gold:#d9a441; --gold-soft:#fbf3e1;
-  --bg:#e8efe6; --card:#fff; --ink:#1a261b; --muted:#556656; --line:#cfd9cc; --ok:#1d7a4d; --ok-soft:#e3f4ea; --warn:#a15c07;
-  --radius:14px; --shadow:0 1px 2px rgba(44,62,45,.06),0 6px 20px rgba(44,62,45,.06);
+  --navy:#103b53; --navy-2:#0b2a3b; --teal:#1f7a8c; --teal-soft:#e4f1f4; --gold:#d9a441; --gold-soft:#fbf3e1;
+  --bg:#f5f7f8; --card:#fff; --ink:#14232d; --muted:#5b6b75; --line:#dde4e8; --ok:#1d7a4d; --ok-soft:#e3f4ea; --warn:#a15c07;
+  --radius:14px; --shadow:0 1px 2px rgba(16,59,83,.06),0 6px 20px rgba(16,59,83,.06);
   --sans:"DM Sans","Noto Sans","Segoe UI",system-ui,sans-serif; --serif:"Source Serif 4",Georgia,serif;
 }
 *{box-sizing:border-box}
@@ -68,12 +68,12 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 .browser-heading{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
 .browser-heading h2{font-size:1.1rem;margin:0;color:var(--navy)}
 .count-label{font-size:.82rem;color:var(--muted)}
-.search-box{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:#f7faf6;color:var(--muted)}
+.search-box{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:#fbfcfc;color:var(--muted)}
 .search-box:focus-within{border-color:var(--teal);background:#fff}
 .search-box input{flex:1;border:0;outline:0;background:none;min-width:0;color:var(--ink)}
 .search-box kbd{font-size:.72rem;border:1px solid var(--line);border-radius:5px;padding:0 6px;background:#fff}
 .filter-row{margin-top:10px}
-.filter-row select{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:#f7faf6}
+.filter-row select{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:#fbfcfc}
 .term-list{margin-top:12px;max-height:56vh;overflow:auto;display:flex;flex-direction:column;gap:3px;padding-right:2px}
 .term-item{display:flex;align-items:center;justify-content:space-between;gap:8px;border:0;background:none;text-align:left;padding:9px 11px;border-radius:9px;border-left:3px solid transparent}
 .term-item:hover{background:var(--teal-soft)}
@@ -96,11 +96,11 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 .word-heading h2{font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0;color:var(--navy);overflow-wrap:anywhere}
 .ipa-line{display:flex;align-items:center;gap:10px;margin:8px 0 0;font-size:1.15rem;flex-wrap:wrap}
 .ipa-label{font-size:.7rem;font-weight:700;letter-spacing:.08em;background:var(--teal-soft);color:var(--teal);padding:2px 8px;border-radius:6px}
-.round-audio{display:grid;place-items:center;flex:none;width:64px;height:64px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:1.7rem;box-shadow:0 4px 14px rgba(44,62,45,.3);transition:transform .15s,background .15s}
+.round-audio{display:grid;place-items:center;flex:none;width:64px;height:64px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:1.7rem;box-shadow:0 4px 14px rgba(16,59,83,.3);transition:transform .15s,background .15s}
 .round-audio:hover{background:var(--teal);transform:scale(1.05)}
 .round-audio.playing{background:var(--gold);color:var(--navy-2)}
 
-.accent-toggle{display:inline-flex;background:#e8efe6;border-radius:999px;padding:3px;gap:2px}
+.accent-toggle{display:inline-flex;background:#eef2f4;border-radius:999px;padding:3px;gap:2px}
 .accent-toggle button{border:0;background:none;padding:4px 14px;border-radius:999px;font-size:.82rem;font-weight:600;color:var(--muted)}
 .accent-toggle button[aria-pressed="true"]{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(0,0,0,.15)}
 
@@ -122,16 +122,30 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 .lang-tool .accent-toggle button{padding:5px 13px}
 .zh{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",var(--sans);color:var(--navy)}
 .zh:lang(zh-Hans){font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei","Heiti SC",var(--sans)}
+.zh-title-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .zh-title{font-size:clamp(1.25rem,3vw,1.7rem);font-weight:600;margin:4px 0 0;line-height:1.3}
+.zh-title.common,.zh-inline.common{color:#0070c0}
+.zh-name-tag{font-size:.72rem;font-weight:600;letter-spacing:.02em;padding:3px 10px;border-radius:999px;margin-top:5px;white-space:nowrap;border:1px solid transparent}
+.zh-name-tag.common{color:#0070c0;background:#e7f1fa;border-color:#bcd8f2}
+.zh-name-tag.official{color:var(--navy);background:var(--teal-soft);border-color:#cfe4e8}
+.name-legend{display:flex;align-items:center;gap:6px 18px;flex-wrap:wrap;margin:-10px 0 20px;padding:9px 14px;font-size:.82rem;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+.name-legend .legend-item{display:inline-flex;align-items:center;gap:7px}
+.name-legend .legend-zh{font-weight:600;color:var(--navy)}
+.name-legend .legend-zh.common{color:#0070c0}
+.legend-swatch{width:11px;height:11px;border-radius:3px;flex:none}
+.legend-swatch.common{background:#0070c0}
+.legend-swatch.official{background:var(--navy)}
 .zh-block{margin-top:10px;padding:10px 14px;border-left:3px solid var(--teal);background:var(--teal-soft);border-radius:0 10px 10px 0;font-size:1.02rem;line-height:1.75}
 .zh-inline{margin-left:10px;font-weight:600;color:var(--navy)}
 .term-item .zh-sub{display:block;font-size:.8rem;color:var(--muted);line-height:1.3}
+.term-item .zh-sub.common{color:#0070c0}
 .term-item[aria-selected="true"] .zh-sub{color:rgba(255,255,255,.8)}
+.term-item[aria-selected="true"] .zh-sub.common{color:#8fd0ff}
 .voice-note{font-size:.85rem;color:var(--muted);margin:8px 0 0}.voice-note.warn{color:var(--warn)}
 .pexels-note{font-size:.85rem!important;color:var(--muted);margin-top:8px!important}
 
 /* practice */
-.practice-panel{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px;padding:16px 18px;border:1.5px dashed #b5c4b1;border-radius:12px;background:#f7faf6}
+.practice-panel{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px;padding:16px 18px;border:1.5px dashed #b6c6cf;border-radius:12px;background:#fafcfd}
 .practice-copy{display:flex;align-items:center;gap:12px}
 .practice-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--teal-soft);color:var(--teal);font-size:1.3rem}
 .practice-copy h3{margin:0;font-size:1rem;color:var(--navy)}
@@ -149,7 +163,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 .practice-tools{flex-basis:100%;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .practice-tools .text-action{margin-top:0}
 .practice-tools .rec-on{color:#c0392b}
-.level{flex-basis:100%;height:8px;border-radius:99px;background:#dce5d9;overflow:hidden}
+.level{flex-basis:100%;height:8px;border-radius:99px;background:#e5ebee;overflow:hidden}
 .level span{display:block;height:100%;width:0;background:var(--teal);transition:width .08s}
 #playback{flex-basis:100%;width:100%;height:40px}
 .trouble{flex-basis:100%;font-size:.88rem;color:var(--muted)}
@@ -176,6 +190,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 }
 @media (max-width:560px){
   .home-tabs{grid-template-columns:1fr}
+  .brand-name{display:none}
   .study-label{display:none}
   .tab-count{display:none}
   .round-audio{width:54px;height:54px}
@@ -211,7 +226,6 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 <header class="topbar">
   <a class="brand" href="#" aria-label="HKDI home">
     <span class="brand-mark">HKDI</span>
-    <span class="brand-name">Professional English Studio</span>
   </a>
   <nav class="topnav" aria-label="Main navigation">
     <a class="nav-link active" href="#glossary">Glossary</a>
@@ -223,8 +237,9 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 <main id="glossary" class="page-shell">
   <section class="page-intro" aria-labelledby="page-title">
     <div class="intro-copy">
-      <h1 id="page-title">Fashion and Image Design</h1>
-      <p>Choose a term. Learn the correct pronunciation.</p>
+      <div class="breadcrumb"><span>Learning resources</span><span aria-hidden="true">/</span><span>Fashion</span></div>
+      <h1 id="page-title">Fashion glossary</h1>
+      <p>Listen to the pronunciation, read the meaning, and practise speaking.</p>
     </div>
     <div class="intro-tools">
       <div class="lang-tool">
@@ -245,15 +260,20 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
   <div class="home-tabs" role="tablist" aria-label="Glossary sections">
     <button class="home-tab" role="tab" id="tab-terms" data-mode="terms" aria-selected="true" aria-controls="panel">
       <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 7l3 3v10h10V10l3-3-8-4Z"/><path d="M9 4.5c.6 1.7 1.7 2.5 3 2.5s2.4-.8 3-2.5"/></svg></span>
-      <span class="tab-text"><strong>Professional terms</strong><span>Fabrics, techniques and style vocabulary</span></span>
+      <span class="tab-text"><strong>Common fashion terms</strong><span>Fabrics, techniques and style vocabulary</span></span>
       <span class="tab-count" id="count-terms"></span>
     </button>
     <button class="home-tab" role="tab" id="tab-brands" data-mode="brands" aria-selected="false" aria-controls="panel">
       <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9h18l-1.5-5h-15L3 9Z"/><path d="M5 9v11h14V9"/><path d="M10 20v-6h4v6"/></svg></span>
-      <span class="tab-text"><strong>Global brands</strong><span>Fashion houses and how to say them</span></span>
+      <span class="tab-text"><strong>Brand names</strong><span>Fashion houses and how to say them</span></span>
       <span class="tab-count" id="count-brands"></span>
     </button>
   </div>
+
+  <p class="name-legend" id="name-legend" hidden>
+    <span class="legend-item"><span class="legend-swatch common" aria-hidden="true"></span><span class="legend-zh common">常見譯名</span>Chinese name in blue = common translation</span>
+    <span class="legend-item"><span class="legend-swatch official" aria-hidden="true"></span><span class="legend-zh">官方譯名</span>Chinese name in black = official translation</span>
+  </p>
 
   <section id="panel" class="workspace" role="tabpanel" aria-label="Glossary practice">
     <aside class="term-browser" aria-label="Choose an entry">
@@ -275,7 +295,10 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
       <div class="word-heading">
         <div>
           <h2 id="term-title">Loading…</h2>
-          <p id="zh-title" class="zh zh-title" hidden></p>
+          <div class="zh-title-line">
+            <p id="zh-title" class="zh zh-title" hidden></p>
+            <span id="zh-name-tag" class="zh-name-tag" hidden></span>
+          </div>
           <p class="ipa-line"><span class="ipa-label" id="ipa-label">UK IPA</span><span id="term-ipa">—</span></p>
         </div>
         <button id="speak-button" class="round-audio" type="button" aria-label="Hear pronunciation" title="Hear pronunciation">
@@ -294,11 +317,11 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
       <div id="term-view">
         <section class="block" aria-labelledby="meaning-label"><h3 id="meaning-label">Meaning</h3><p id="term-meaning"></p><p id="zh-meaning" class="zh zh-block" hidden></p></section>
         <section class="block example-block" aria-labelledby="example-label">
-          <div class="example-heading"><h3 id="example-label">In a sentence</h3></div>
+          <div class="example-heading"><h3 id="example-label">In a sentence</h3><span class="example-tag">EXAMPLE</span></div>
           <p id="term-example"></p>
           <p id="zh-example" class="zh zh-block" hidden></p>
           <button id="example-audio" class="text-action" type="button">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg>Hear the example
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg>Hear example
           </button>
         </section>
       </div>
@@ -314,8 +337,8 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
         </section>
         <section class="block" aria-labelledby="origin-label"><h3 id="origin-label">Country of origin</h3><span class="country-badge"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="brand-country"></span></span><span id="zh-country" class="zh zh-inline" hidden></span></section>
         <section class="block" aria-labelledby="visual-label"><h3 id="visual-label">See the brand</h3>
-          <a id="pexels-link" class="pexels-btn" href="#" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-5-5-8 8"/></svg>Browse images on Pexels</a>
-          <p class="pexels-note">Opens Pexels in a new tab to show examples of this brand's style.</p>
+          <a id="pexels-link" class="pexels-btn" href="#" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-5-5-8 8"/></svg>Visit official site</a>
+          <p class="pexels-note">Opens the brand’s official website in a new tab.</p>
         </section>
       </div>
 
@@ -354,10 +377,10 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
     </article>
   </section>
 </main>
-<footer class="site-footer"><span>Learning through language</span></footer>
+<footer class="site-footer"><span>Department of Communication Design</span><span>Learning through language</span></footer>
 
 <script>
-/* Data generated from "LTDC - Glossory List FID.xlsx" (Sheet1) */
+/* Data generated from "LTDC - Glossary List FID - Updated UK US IPA1_revised.xlsx" (Fashion brand names + Common terms) */
 const GLOSSARY = {
  "terms": [
   {
@@ -574,10 +597,10 @@ const GLOSSARY = {
    "ipaUS": "/ˈkɔːr.sə.tri/",
    "meaning": "The design, making, or wearing of corsets and structured bodices.",
    "example": "The designer referenced corsetry with visible boning while keeping the bodice comfortable to wear.",
-   "nameTC": "束身衣工藝",
+   "nameTC": "束腰工藝",
    "meaningTC": "束腰緊身衣及結構性上衣的設計、製作或穿著。",
    "exampleTC": "設計師以外露的鋼骨呼應束身衣工藝，同時讓上身穿著舒適。",
-   "nameSC": "束身衣工艺",
+   "nameSC": "束腰工艺",
    "meaningSC": "束腰紧身衣及结构性上衣的设计、制作或穿着。",
    "exampleSC": "设计师以外露的钢骨呼应束身衣工艺，同时让上身穿着舒适。"
   },
@@ -624,13 +647,13 @@ const GLOSSARY = {
    "name": "Facade",
    "ipaUK": "/fəˈsɑːd/",
    "ipaUS": "/fəˈsɑːd/",
-   "meaning": "The front or outward face of a building; by extension, an outward appearance.",
+   "meaning": "The exterior face of a building or retail store designed to create a specific visual impression.",
    "example": "The boutique’s glass facade displayed mannequins in the new collection to attract passers-by.",
-   "nameTC": "門面；外觀",
-   "meaningTC": "建築物的正面或外觀；引申指外在表象。",
+   "nameTC": "外觀設計",
+   "meaningTC": "建築物正立面、外牆、店面外觀、門面設計",
    "exampleTC": "精品店的玻璃門面展示著新系列的人台模特兒，吸引路人駐足。",
-   "nameSC": "门面；外观",
-   "meaningSC": "建筑物的正面或外观；引申指外在表象。",
+   "nameSC": "外观设计",
+   "meaningSC": "建筑物正立面、外墙、店面外观、门面设计",
    "exampleSC": "精品店的玻璃门面展示着新系列的人台模特儿，吸引路人驻足。"
   },
   {
@@ -678,10 +701,10 @@ const GLOSSARY = {
    "ipaUS": "/ˈɪn.t̬ɚˌfeɪ.sɪŋ/",
    "meaning": "A layer of material placed between fabric layers to add support, shape, or stiffness.",
    "example": "She fused lightweight interfacing to the collar pieces so they would keep their shape after pressing.",
-   "nameTC": "襯布",
+   "nameTC": "襯布/ 襆",
    "meaningTC": "放置在布料層之間，用來增加支撐、造型或挺度的材料。",
    "exampleTC": "她在領片上燙貼輕薄的襯布，讓領片在熨燙後仍能保持形狀。",
-   "nameSC": "衬布",
+   "nameSC": "衬布/ 襆",
    "meaningSC": "放置在布料层之间，用来增加支撑、造型或挺度的材料。",
    "exampleSC": "她在领片上烫贴轻薄的衬布，让领片在熨烫后仍能保持形状。"
   },
@@ -691,10 +714,10 @@ const GLOSSARY = {
    "ipaUS": "/dʒəˈkɑːrd/",
    "meaning": "A fabric woven with an intricate pattern, rather than a pattern printed on its surface.",
    "example": "A woven jacquard pattern gave the simple shift dress visual interest without added trim.",
-   "nameTC": "提花",
+   "nameTC": "提花布",
    "meaningTC": "以織造方式形成複雜圖案的布料，而非印在表面上的圖案。",
    "exampleTC": "織造的提花圖案讓簡約的直筒洋裝更具視覺趣味，無需額外裝飾。",
-   "nameSC": "提花",
+   "nameSC": "提花布",
    "meaningSC": "以织造方式形成复杂图案的布料，而非印在表面上的图案。",
    "exampleSC": "织造的提花图案让简约的直筒连衣裙更具视觉趣味，无需额外装饰。"
   },
@@ -952,29 +975,31 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/əˈlaɪ.ə/",
    "ipaUS": "/ɑːˈlaɪ.ə/",
-   "url": "https://www.pexels.com/search/Alaia%20dress/",
+   "url": "https://www.maison-alaia.com/en-hk/",
    "nameTC": "阿萊亞",
    "nameSC": "阿莱亚",
    "countryTC": "法國",
-   "countrySC": "法国"
+   "countrySC": "法国",
+   "commonName": true
   },
   {
    "name": "Balmain",
    "country": "France",
    "ipaUK": "/ˈbæl.mæn/",
    "ipaUS": "/bælˈmæn/",
-   "url": "https://www.pexels.com/search/Balmain%20fashion/",
+   "url": "https://balmain.com/en-hk/",
    "nameTC": "巴爾曼",
    "nameSC": "巴尔曼",
    "countryTC": "法國",
-   "countrySC": "法国"
+   "countrySC": "法国",
+   "commonName": true
   },
   {
    "name": "Cartier",
    "country": "France",
    "ipaUK": "/ˈkɑː.ti.eɪ/",
    "ipaUS": "/ˌkɑːr.t̬iˈeɪ/",
-   "url": "https://www.pexels.com/search/Cartier%20jewelry/",
+   "url": "https://www.cartier.com/en-hk",
    "nameTC": "卡地亞",
    "nameSC": "卡地亚",
    "countryTC": "法國",
@@ -985,7 +1010,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/seˈliːn/",
    "ipaUS": "/səˈliːn/",
-   "url": "https://www.pexels.com/search/Celine%20fashion/",
+   "url": "https://www.celine.com/en-hk/home",
    "nameTC": "思琳",
    "nameSC": "思琳",
    "countryTC": "法國",
@@ -996,7 +1021,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ʃəˈnel/",
    "ipaUS": "/ʃəˈnel/",
-   "url": "https://www.pexels.com/search/Chanel%20bag/",
+   "url": "https://www.chanel.com/hk-en/",
    "nameTC": "香奈兒",
    "nameSC": "香奈儿",
    "countryTC": "法國",
@@ -1007,7 +1032,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ˈkləʊ.i/",
    "ipaUS": "/ˈkloʊ.i/",
-   "url": "https://www.pexels.com/search/Chloe%20fashion/",
+   "url": "https://www.chloe.com/en-hk",
    "nameTC": "蔻依",
    "nameSC": "蔻依",
    "countryTC": "法國",
@@ -1018,7 +1043,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ˌkrɪs.tʃən diˈɔː/",
    "ipaUS": "/ˌkrɪs.tʃən diˈɔːr/",
-   "url": "https://www.pexels.com/search/Christian%20Dior%20fashion/",
+   "url": "https://www.dior.com/en_hk",
    "nameTC": "克里斯汀·迪奧",
    "nameSC": "克里斯汀·迪奥",
    "countryTC": "法國",
@@ -1029,9 +1054,9 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ˌkrɪs.tʃən ˈluː.bʊ.tæn/",
    "ipaUS": "/ˌkrɪs.tʃən ˌluː.buːˈtæn/",
-   "url": "https://www.pexels.com/search/Christian%20Louboutin%20shoes/",
-   "nameTC": "克里斯提·魯布托",
-   "nameSC": "克里斯提·鲁布托",
+   "url": "https://apac.christianlouboutin.com/hk_en/",
+   "nameTC": "路鉑廷",
+   "nameSC": "路铂廷",
    "countryTC": "法國",
    "countrySC": "法国"
   },
@@ -1040,7 +1065,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ʒɪˈvɒn.ʃi/",
    "ipaUS": "/ʒɪˈvɑːn.ʃi/",
-   "url": "https://www.pexels.com/search/Givenchy%20fashion/",
+   "url": "https://www.givenchy.com/int/en/homepage",
    "nameTC": "紀梵希",
    "nameSC": "纪梵希",
    "countryTC": "法國",
@@ -1051,9 +1076,9 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ˈɡɔɪ.ɑːd/",
    "ipaUS": "/ɡɔɪˈɑːrd/",
-   "url": "https://www.pexels.com/search/Goyard%20bag/",
-   "nameTC": "戈雅",
-   "nameSC": "戈雅",
+   "url": "https://www.goyard.com/hk_en/",
+   "nameTC": "高雅德",
+   "nameSC": "高雅德",
    "countryTC": "法國",
    "countrySC": "法国"
   },
@@ -1062,7 +1087,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/eəˈmez/",
    "ipaUS": "/erˈmez/",
-   "url": "https://www.pexels.com/search/Hermes%20bag/",
+   "url": "https://www.hermes.com/hk/en/",
    "nameTC": "愛馬仕",
    "nameSC": "爱马仕",
    "countryTC": "法國",
@@ -1073,7 +1098,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ʒækˈmuːs/",
    "ipaUS": "/ʒɑːkˈmuːs/",
-   "url": "https://www.pexels.com/search/Jacquemus%20fashion/",
+   "url": "https://www.jacquemus.com/en_hk",
    "nameTC": "雅克慕斯",
    "nameSC": "雅克慕斯",
    "countryTC": "法國",
@@ -1084,7 +1109,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ˌʒɒn pɔːl ˈɡəʊ.ti.eɪ/",
    "ipaUS": "/ˌʒɑːn pɔːl ɡoʊˈtjeɪ/",
-   "url": "https://www.pexels.com/search/Jean%20Paul%20Gaultier%20fashion/",
+   "url": "https://fashion.jeanpaulgaultier.com/en-hk?_gl=1*1kcj87d*_gcl_au*MTk0NzQ3MTQ3Ny4xNzk0ODk5ODcyLjE0ODc0MDMxNzIuMTc5NDg5OTg3Mi4xNzk0ODk5ODcxLjE0MzIxMjA4OTguMTc5NDg5OTg3Mi4xNzk0ODk5ODcx*_ga*MTM0MDU2MTA1OS4xNzk0ODk5ODY4*_ga_9X68GSCJWV*czE3OTQ4OTk4NzEkbzEkZzAkdDE3OTQ4OTk4NzYkajYwJGwwJGgwJGRMZEI4elVXVjVNQkxid2JYaGhEamJ3ZC1QUk9xOVFUWnJ3",
    "nameTC": "尚-保羅·高堤耶",
    "nameSC": "让-保罗·高缇耶",
    "countryTC": "法國",
@@ -1095,18 +1120,19 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/kɑːl ˈlɑː.ɡə.feld/",
    "ipaUS": "/kɑːrl ˈlɑː.ɡɚ.feld/",
-   "url": "https://www.pexels.com/search/Karl%20Lagerfeld%20fashion/",
+   "url": "https://www.karllagerfeld.com/en-nl",
    "nameTC": "卡爾·拉格斐",
    "nameSC": "卡尔·拉格斐",
    "countryTC": "法國",
-   "countrySC": "法国"
+   "countrySC": "法国",
+   "commonName": true
   },
   {
    "name": "Lanvin",
    "country": "France",
    "ipaUK": "/ˈlɒn.væn/",
    "ipaUS": "/lɑːnˈvæn/",
-   "url": "https://www.pexels.com/search/Lanvin%20fashion/",
+   "url": "https://www.lanvin.com/en-hk/",
    "nameTC": "浪凡",
    "nameSC": "浪凡",
    "countryTC": "法國",
@@ -1117,9 +1143,9 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ˌmeɪ.zɒn kɪtˈsuː.neɪ/",
    "ipaUS": "/ˌmeɪ.zɑːn kɪtˈsuː.neɪ/",
-   "url": "https://www.pexels.com/search/Maison%20Kitsune%20fashion/",
-   "nameTC": "",
-   "nameSC": "",
+   "url": "https://maisonkitsune.com/ww/",
+   "nameTC": "小狐狸",
+   "nameSC": "小狐狸",
    "countryTC": "法國",
    "countrySC": "法国"
   },
@@ -1128,7 +1154,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ˌmeɪ.zɒn mɑːˈdʒel.ə/",
    "ipaUS": "/ˌmeɪ.zɑːn mɑːrˈdʒel.ə/",
-   "url": "https://www.pexels.com/search/Maison%20Margiela%20fashion/",
+   "url": "https://www.maisonmargiela.com/en-hk/",
    "nameTC": "梅森·馬吉拉",
    "nameSC": "梅森·马吉拉",
    "countryTC": "法國",
@@ -1139,7 +1165,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/mɒnˈkleə/",
    "ipaUS": "/mɑːnˈkler/",
-   "url": "https://www.pexels.com/search/Moncler%20jacket/",
+   "url": "https://www.moncler.com/en-hk/",
    "nameTC": "盟可睞",
    "nameSC": "盟可睐",
    "countryTC": "法國",
@@ -1150,7 +1176,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ˈrɒʃ.æs/",
    "ipaUS": "/ˈroʊ.ʃɑːs/",
-   "url": "https://www.pexels.com/search/Rochas%20fashion/",
+   "url": "https://www.rochas.com/en",
    "nameTC": "羅莎",
    "nameSC": "罗莎",
    "countryTC": "法國",
@@ -1161,7 +1187,7 @@ const GLOSSARY = {
    "country": "France",
    "ipaUK": "/ˌiːv ˌsæn lɒˈrɒn/",
    "ipaUS": "/ˌiːv ˌsæn ləˈrɑːn/",
-   "url": "https://www.pexels.com/search/Yves%20Saint%20Laurent%20fashion/",
+   "url": "https://www.ysl.com/en-hk",
    "nameTC": "聖羅蘭",
    "nameSC": "圣罗兰",
    "countryTC": "法國",
@@ -1172,8 +1198,8 @@ const GLOSSARY = {
    "country": "Italy",
    "ipaUK": "/bɒˌteɡ.ə ˈven.ɪ.tə/",
    "ipaUS": "/boʊˌteɡ.ə ˈven.ə.t̬ə/",
-   "url": "https://www.pexels.com/search/Bottega%20Veneta%20bag/",
-   "nameTC": "寶緹嘉",
+   "url": "https://www.bottegaveneta.com/en-hk",
+   "nameTC": "葆蝶家",
    "nameSC": "葆蝶家",
    "countryTC": "義大利",
    "countrySC": "意大利"
@@ -1183,7 +1209,7 @@ const GLOSSARY = {
    "country": "Italy",
    "ipaUK": "/bruːˌnel.əʊ ˌkuː.tʃɪˈnel.i/",
    "ipaUS": "/bruːˌnel.oʊ ˌkuː.tʃɪˈnel.i/",
-   "url": "https://www.pexels.com/search/Brunello%20Cucinelli%20fashion/",
+   "url": "https://www.brunellocucinelli.com/en/",
    "nameTC": "布魯奈羅·庫奇內利",
    "nameSC": "布鲁奈罗·库奇内利",
    "countryTC": "義大利",
@@ -1194,7 +1220,7 @@ const GLOSSARY = {
    "country": "Italy",
    "ipaUK": "/ˌdɒl.tʃi ən ɡəˈbɑː.nə/",
    "ipaUS": "/ˌdoʊl.tʃeɪ ən ɡəˈbɑː.nə/",
-   "url": "https://www.pexels.com/search/Dolce%20Gabbana%20fashion/",
+   "url": "https://www.dolcegabbana.com/en-hk/",
    "nameTC": "杜嘉班納",
    "nameSC": "杜嘉班纳",
    "countryTC": "義大利",
@@ -1205,7 +1231,7 @@ const GLOSSARY = {
    "country": "Italy",
    "ipaUK": "/ˌɜː.mə.nəˌdʒɪl.dəʊ ˈzen.jə/",
    "ipaUS": "/ˌɝː.mə.nəˌdʒɪl.doʊ ˈzen.jə/",
-   "url": "https://www.pexels.com/search/Zegna%20suit/",
+   "url": "https://www.zegna.com/hk-en/",
    "nameTC": "傑尼亞",
    "nameSC": "杰尼亚",
    "countryTC": "義大利",
@@ -1216,9 +1242,9 @@ const GLOSSARY = {
    "country": "Italy",
    "ipaUK": "/ˌdʒæm.bəˌtɪs.tə ˈvæl.i/",
    "ipaUS": "/ˌdʒɑːm.bəˌtɪs.tə ˈvæl.i/",
-   "url": "https://www.pexels.com/search/Giambattista%20Valli%20dress/",
-   "nameTC": "",
-   "nameSC": "",
+   "url": "https://www.giambattistavalli.com/",
+   "nameTC": "詹巴迪斯塔·瓦利",
+   "nameSC": "詹巴迪斯塔·瓦利",
    "countryTC": "義大利",
    "countrySC": "意大利"
   },
@@ -1227,9 +1253,9 @@ const GLOSSARY = {
    "country": "Italy",
    "ipaUK": "/ˌlɔː.rəʊ piˈɑː.nə/",
    "ipaUS": "/ˌlɔːr.oʊ piˈɑː.nə/",
-   "url": "https://www.pexels.com/search/Loro%20Piana%20fashion/",
-   "nameTC": "諾悠翠雅",
-   "nameSC": "诺悠翠雅",
+   "url": "https://hk.loropiana.com/en/",
+   "nameTC": "諾悠翩雅",
+   "nameSC": "诺悠翩雅",
    "countryTC": "義大利",
    "countrySC": "意大利"
   },
@@ -1238,7 +1264,7 @@ const GLOSSARY = {
    "country": "Italy",
    "ipaUK": "/mɒsˈkiː.nəʊ/",
    "ipaUS": "/mɑːsˈkiː.noʊ/",
-   "url": "https://www.pexels.com/search/Moschino%20fashion/",
+   "url": "https://www.moschino.com/en-as",
    "nameTC": "莫斯奇諾",
    "nameSC": "莫斯奇诺",
    "countryTC": "義大利",
@@ -1249,9 +1275,9 @@ const GLOSSARY = {
    "country": "Italy",
    "ipaUK": "/ˌsæl.vəˌtɔː.ri ˌfer.əˈɡɑː.məʊ/",
    "ipaUS": "/ˌsæl.vəˌtɔːr.i ˌfer.əˈɡɑː.moʊ/",
-   "url": "https://www.pexels.com/search/Ferragamo%20shoes/",
-   "nameTC": "薩爾瓦托·菲拉格慕",
-   "nameSC": "萨尔瓦托·菲拉格慕",
+   "url": "https://www.ferragamo.com/shop/gb/en",
+   "nameTC": "菲拉格慕",
+   "nameSC": "菲拉格慕",
    "countryTC": "義大利",
    "countrySC": "意大利"
   },
@@ -1260,8 +1286,8 @@ const GLOSSARY = {
    "country": "Italy",
    "ipaUK": "/vəˈsɑː.tʃi/",
    "ipaUS": "/vɚˈsɑː.tʃi/",
-   "url": "https://www.pexels.com/search/Versace%20fashion/",
-   "nameTC": "凡賽斯",
+   "url": "https://www.versace.com/hk/en/",
+   "nameTC": "范思哲",
    "nameSC": "范思哲",
    "countryTC": "義大利",
    "countrySC": "意大利"
@@ -1271,18 +1297,19 @@ const GLOSSARY = {
    "country": "Japan",
    "ipaUK": "/ˌkɒm deɪ ˈɡɑː.sɒn/",
    "ipaUS": "/ˌkɑːm deɪ ɡɑːrˈsɔːn/",
-   "url": "https://www.pexels.com/search/Comme%20des%20Garcons%20fashion/",
+   "url": "https://www.comme-des-garcons.com/",
    "nameTC": "川久保玲",
    "nameSC": "川久保玲",
    "countryTC": "日本",
-   "countrySC": "日本"
+   "countrySC": "日本",
+   "commonName": true
   },
   {
    "name": "Issey Miyake",
    "country": "Japan",
    "ipaUK": "/ˌɪs.i miˈjɑː.ki/",
    "ipaUS": "/ˌɪs.eɪ miˈjɑː.ki/",
-   "url": "https://www.pexels.com/search/Issey%20Miyake%20pleats/",
+   "url": "https://www.isseymiyake.com/en",
    "nameTC": "三宅一生",
    "nameSC": "三宅一生",
    "countryTC": "日本",
@@ -1293,7 +1320,7 @@ const GLOSSARY = {
    "country": "Japan",
    "ipaUK": "/ˌjəʊ.dʒi ˌjæm.əˈməʊ.təʊ/",
    "ipaUS": "/ˌjoʊ.dʒi ˌjɑː.məˈmoʊ.t̬oʊ/",
-   "url": "https://www.pexels.com/search/Yohji%20Yamamoto%20fashion/",
+   "url": "https://www.yohjiyamamoto.co.jp/en/",
    "nameTC": "山本耀司",
    "nameSC": "山本耀司",
    "countryTC": "日本",
@@ -1304,7 +1331,7 @@ const GLOSSARY = {
    "country": "Spain",
    "ipaUK": "/bəˌlen.siˈɑː.ɡə/",
    "ipaUS": "/bəˌlen.siˈɑː.ɡə/",
-   "url": "https://www.pexels.com/search/Balenciaga%20fashion/",
+   "url": "https://www.balenciaga.com/",
    "nameTC": "巴黎世家",
    "nameSC": "巴黎世家",
    "countryTC": "西班牙",
@@ -1315,7 +1342,7 @@ const GLOSSARY = {
    "country": "Spain",
    "ipaUK": "/lɔːˈev.eɪ/",
    "ipaUS": "/loʊˈev.eɪ/",
-   "url": "https://www.pexels.com/search/Loewe%20bag/",
+   "url": "https://www.loewe.com/",
    "nameTC": "羅意威",
    "nameSC": "罗意威",
    "countryTC": "西班牙",
@@ -1326,18 +1353,19 @@ const GLOSSARY = {
    "country": "Switzerland",
    "ipaUK": "/ˈvet.mɒn/",
    "ipaUS": "/ˌvet.əˈmɑːn/",
-   "url": "https://www.pexels.com/search/Vetements%20fashion/",
-   "nameTC": "",
-   "nameSC": "",
+   "url": "https://www.vetements.com/",
+   "nameTC": "維特萌",
+   "nameSC": "维特萌",
    "countryTC": "瑞士",
-   "countrySC": "瑞士"
+   "countrySC": "瑞士",
+   "commonName": true
   },
   {
    "name": "Alexander McQueen",
    "country": "United Kingdom",
    "ipaUK": "/ˌæl.ɪɡˈzɑːn.də məˈkwiːn/",
    "ipaUS": "/ˌæl.ɪɡˈzæn.dɚ məˈkwiːn/",
-   "url": "https://www.pexels.com/search/Alexander%20McQueen%20fashion/",
+   "url": "https://www.alexandermcqueen.com/",
    "nameTC": "亞歷山大·麥昆",
    "nameSC": "亚历山大·麦昆",
    "countryTC": "英國",
@@ -1348,20 +1376,21 @@ const GLOSSARY = {
    "country": "United Kingdom",
    "ipaUK": "/dʒɒn ˌɡæl.iˈɑː.nəʊ/",
    "ipaUS": "/dʒɑːn ˌɡæl.iˈɑː.noʊ/",
-   "url": "https://www.pexels.com/search/John%20Galliano%20fashion/",
+   "url": "https://www.johngalliano.com/",
    "nameTC": "約翰·加利亞諾",
    "nameSC": "约翰·加利亚诺",
    "countryTC": "英國",
-   "countrySC": "英国"
+   "countrySC": "英国",
+   "commonName": true
   },
   {
    "name": "Marc Jacobs",
    "country": "United States",
    "ipaUK": "/mɑːk ˈdʒeɪ.kəbz/",
    "ipaUS": "/mɑːrk ˈdʒeɪ.kəbz/",
-   "url": "https://www.pexels.com/search/Marc%20Jacobs%20bag/",
-   "nameTC": "馬克·雅各布斯",
-   "nameSC": "马克·雅各布斯",
+   "url": "https://www.marcjacobs.com/",
+   "nameTC": "馬克·雅可布",
+   "nameSC": "马克·雅可布",
    "countryTC": "美國",
    "countrySC": "美国"
   }
@@ -1372,8 +1401,8 @@ const GLOSSARY = {
   const $ = id => document.getElementById(id);
   const STORE_KEY = "dcd-fashion-glossary-v2";
   const MODES = {
-    terms:  { items: GLOSSARY.terms,  noun:"term",  nounPlural:"terms",  heading:"Professional terms", placeholder:"Find a term",  label:"WORD STUDY" },
-    brands: { items: GLOSSARY.brands, noun:"brand", nounPlural:"brands", heading:"Global brands",   placeholder:"Find a brand", label:"BRAND STUDY" }
+    terms:  { items: GLOSSARY.terms,  noun:"term",  nounPlural:"terms",  heading:"Fashion terms", placeholder:"Find a term",  label:"WORD STUDY" },
+    brands: { items: GLOSSARY.brands, noun:"brand", nounPlural:"brands", heading:"Brand names",   placeholder:"Find a brand", label:"BRAND STUDY" }
   };
   const state = { mode:"terms", accent:"uk", voiceMode:"english", zh:"off", index:{terms:0,brands:0}, query:"", country:"All", done:{terms:[],brands:[]} };
 
@@ -1404,6 +1433,7 @@ const GLOSSARY = {
     document.querySelectorAll(".home-tab").forEach(t => t.setAttribute("aria-selected", String(t.dataset.mode===state.mode)));
     $("count-terms").textContent = MODES.terms.items.length + " terms";
     $("count-brands").textContent = MODES.brands.items.length + " brands";
+    $("name-legend").hidden = state.mode!=="brands";
     $("panel").setAttribute("aria-labelledby", "tab-"+state.mode);
   }
   function renderList(){
@@ -1417,7 +1447,7 @@ const GLOSSARY = {
       b.type="button"; b.className="term-item"+(isDone(state.mode,it.name)?" done":"");
       b.setAttribute("role","option"); b.setAttribute("aria-selected", String(it===cur));
       const name = document.createElement("span"); name.textContent = it.name;
-      const zn = zh(it,"name"); if(zn){ const z=document.createElement("span"); z.className="zh-sub"; z.lang=zhLang(); z.textContent=zn; name.appendChild(z); }
+      const zn = zh(it,"name"); if(zn){ const z=document.createElement("span"); z.className="zh-sub"+((state.mode==="brands"&&it.commonName)?" common":""); z.lang=zhLang(); z.textContent=zn; name.appendChild(z); }
       const meta = document.createElement("span"); meta.className="term-meta";
       if(state.mode==="brands"){ const t=document.createElement("span"); t.className="tag"; t.textContent=it.country; meta.appendChild(t); }
       meta.insertAdjacentHTML("beforeend",'<svg class="tick" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5 9.4 17 19 7.5"/></svg>');
@@ -1439,6 +1469,11 @@ const GLOSSARY = {
     if(isBrand){ renderVoice(it); $("brand-country").textContent = it.country; const a=$("pexels-link"); a.href = it.url || "#"; a.hidden = !it.url; }
     else { $("term-meaning").textContent = it.meaning; $("term-example").textContent = it.example; }
     setZh("zh-title", zh(it,"name"));
+    const zhName = zh(it,"name");
+    $("zh-title").classList.toggle("common", isBrand && !!it.commonName);
+    const nameTag = $("zh-name-tag");
+    nameTag.hidden = !(isBrand && zhName);
+    if(isBrand && zhName){ nameTag.textContent = it.commonName ? "常見譯名" : "官方譯名"; nameTag.className = "zh-name-tag " + (it.commonName ? "common" : "official"); nameTag.lang = zhLang(); }
     setZh("zh-meaning", isBrand ? "" : zh(it,"meaning"));
     setZh("zh-example", isBrand ? "" : zh(it,"example"));
     setZh("zh-country", isBrand ? zh(it,"country") : "");
