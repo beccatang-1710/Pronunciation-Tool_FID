@@ -122,12 +122,8 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 .lang-tool .accent-toggle button{padding:5px 13px}
 .zh{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",var(--sans);color:var(--navy)}
 .zh:lang(zh-Hans){font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei","Heiti SC",var(--sans)}
-.zh-title-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .zh-title{font-size:clamp(1.25rem,3vw,1.7rem);font-weight:600;margin:4px 0 0;line-height:1.3}
 .zh-title.common,.zh-inline.common{color:#0070c0}
-.zh-name-tag{font-size:.72rem;font-weight:600;letter-spacing:.02em;padding:3px 10px;border-radius:999px;margin-top:5px;white-space:nowrap;border:1px solid transparent}
-.zh-name-tag.common{color:#0070c0;background:#e7f1fa;border-color:#bcd8f2}
-.zh-name-tag.official{color:var(--navy);background:var(--teal-soft);border-color:#cfe4e8}
 .name-legend{display:flex;align-items:center;gap:6px 18px;flex-wrap:wrap;margin:-10px 0 20px;padding:9px 14px;font-size:.82rem;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
 .name-legend .legend-item{display:inline-flex;align-items:center;gap:7px}
 .name-legend .legend-zh{font-weight:600;color:var(--navy)}
@@ -295,10 +291,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
       <div class="word-heading">
         <div>
           <h2 id="term-title">Loading…</h2>
-          <div class="zh-title-line">
-            <p id="zh-title" class="zh zh-title" hidden></p>
-            <span id="zh-name-tag" class="zh-name-tag" hidden></span>
-          </div>
+          <p id="zh-title" class="zh zh-title" hidden></p>
           <p class="ipa-line"><span class="ipa-label" id="ipa-label">UK IPA</span><span id="term-ipa">—</span></p>
         </div>
         <button id="speak-button" class="round-audio" type="button" aria-label="Hear pronunciation" title="Hear pronunciation">
@@ -1433,7 +1426,7 @@ const GLOSSARY = {
     document.querySelectorAll(".home-tab").forEach(t => t.setAttribute("aria-selected", String(t.dataset.mode===state.mode)));
     $("count-terms").textContent = MODES.terms.items.length + " terms";
     $("count-brands").textContent = MODES.brands.items.length + " brands";
-    $("name-legend").hidden = state.mode!=="brands";
+    $("name-legend").hidden = !(state.mode==="brands" && state.zh!=="off");
     $("panel").setAttribute("aria-labelledby", "tab-"+state.mode);
   }
   function renderList(){
@@ -1469,11 +1462,8 @@ const GLOSSARY = {
     if(isBrand){ renderVoice(it); $("brand-country").textContent = it.country; const a=$("pexels-link"); a.href = it.url || "#"; a.hidden = !it.url; }
     else { $("term-meaning").textContent = it.meaning; $("term-example").textContent = it.example; }
     setZh("zh-title", zh(it,"name"));
-    const zhName = zh(it,"name");
+    $("name-legend").hidden = !(state.mode==="brands" && state.zh!=="off");
     $("zh-title").classList.toggle("common", isBrand && !!it.commonName);
-    const nameTag = $("zh-name-tag");
-    nameTag.hidden = !(isBrand && zhName);
-    if(isBrand && zhName){ nameTag.textContent = it.commonName ? "常見譯名" : "官方譯名"; nameTag.className = "zh-name-tag " + (it.commonName ? "common" : "official"); nameTag.lang = zhLang(); }
     setZh("zh-meaning", isBrand ? "" : zh(it,"meaning"));
     setZh("zh-example", isBrand ? "" : zh(it,"example"));
     setZh("zh-country", isBrand ? zh(it,"country") : "");
