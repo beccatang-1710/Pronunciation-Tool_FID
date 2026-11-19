@@ -346,7 +346,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
         <p id="speech-support" class="speech-support" hidden></p>
         <details class="trouble"><summary>Speech not detected? Try these</summary>
           <ul>
-            <li>Use the latest Chrome, Edge or Safari. Firefox and iPhone/iPad browsers other than Safari can't check speech.</li>
+            <li>Use the latest Chrome, Edge or Safari. Firefox and iPhone/iPad browsers other than Safari.</li>
             <li>Allow microphone access when your browser asks.</li>
             <li>Speech checking uses your browser's online speech service, so you need an internet connection.</li>
             <li>Choose the right microphone in your device's sound settings, use a quiet room, and speak one word clearly just after tapping.</li>
@@ -368,6 +368,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
   <p id="voice-disclaimer" class="voice-disclaimer" aria-live="polite" hidden></p>
 </main>
 
+<footer class="site-footer"><span>Professional language studio</span><span>Fashion &amp; Image Design</span></footer>
 
 <script>
 /* Data generated from "LTDC - Glossary List FID - Updated UK US IPA1_revised.xlsx" (Fashion brand names + Common terms) */
@@ -1473,7 +1474,7 @@ const GLOSSARY = {
     document.querySelectorAll("#voice-toggle button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.voice===state.voiceMode)));
     const n=$("voice-note"), sp=brandSpeech(it); n.className="voice-note"; n.hidden=false;
     if(state.voiceMode==="english"){ n.textContent=""; n.hidden=true; return; }
-    if(sp.lang.startsWith("en")){ n.textContent="This brand's name is English, so an English ("+(state.accent==="uk"?"UK":"US")+") voice is used."; return; }
+    if(sp.lang.startsWith("en")){ if(it.name==="Alexander McQueen"){ n.textContent=""; n.hidden=true; return; } n.textContent="This brand's name is English, so an English ("+(state.accent==="uk"?"UK":"US")+") voice is used."; return; }
     if(voices.length && !pickVoice(sp.lang)){ n.className="voice-note warn"; n.textContent="No "+LANG_NAMES[sp.lang]+" voice found on this device, so an English voice will be used instead. You can install one in your system's speech settings."; return; }
     n.textContent="";
   }
@@ -1876,9 +1877,7 @@ const GLOSSARY = {
   function showVoiceDisclaimer(region){
     const d=$("voice-disclaimer");
     if(!d) return;
-    if(!region){ d.hidden=true; d.textContent=""; return; }
-    d.textContent="Using an English ("+region+") voice. The IPA shown is the reference; browser speech may still vary slightly by voice.";
-    d.hidden=false;
+    d.hidden=true; d.textContent="";
   }
 
   (function envHint(){
