@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#103b53" />
 <meta name="description" content="Hear, understand, and practise fashion vocabulary and brand names." />
-<title>Fashion Glossary · HKDI</title>
+<title>Fashion &amp; Image Design · Hong Kong Design Institute</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -176,6 +176,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 .step-controls button{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:1.3rem;color:var(--navy)}
 .step-controls button:hover{border-color:var(--teal);background:var(--teal-soft)}
 
+.voice-disclaimer{margin:20px 0 0;padding:10px 14px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted);text-align:center}
 .site-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:18px clamp(16px,4vw,40px);background:var(--navy-2);color:rgba(255,255,255,.75);font-size:.85rem}
 [hidden]{display:none!important}
 
@@ -220,12 +221,10 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="#" aria-label="HKDI home">
-    <span class="brand-mark">HKDI</span>
+  <a class="brand" href="#" aria-label="Hong Kong Design Institute home">
+    <span class="brand-mark">Hong Kong Design Institute</span>
   </a>
   <nav class="topnav" aria-label="Main navigation">
-    <a class="nav-link active" href="#glossary">Glossary</a>
-    <a class="nav-link" href="#practice">Practice</a>
     <span class="study-label">Self-study</span>
   </nav>
 </header>
@@ -233,8 +232,8 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
 <main id="glossary" class="page-shell">
   <section class="page-intro" aria-labelledby="page-title">
     <div class="intro-copy">
-      <div class="breadcrumb"><span>Learning resources</span><span aria-hidden="true">/</span><span>Fashion</span></div>
-      <h1 id="page-title">Fashion glossary</h1>
+      <div class="breadcrumb"><span>Professional language studio</span></div>
+      <h1 id="page-title">Fashion &amp; Image Design</h1>
       <p>Listen to the pronunciation, read the meaning, and practise speaking.</p>
     </div>
     <div class="intro-tools">
@@ -331,7 +330,6 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
         <section class="block" aria-labelledby="origin-label"><h3 id="origin-label">Country of origin</h3><span class="country-badge"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="brand-country"></span></span><span id="zh-country" class="zh zh-inline" hidden></span></section>
         <section class="block" aria-labelledby="visual-label"><h3 id="visual-label">See the brand</h3>
           <a id="pexels-link" class="pexels-btn" href="#" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-5-5-8 8"/></svg>Visit official site</a>
-          <p class="pexels-note">Opens the brand’s official website in a new tab.</p>
         </section>
       </div>
 
@@ -351,7 +349,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
         <details class="trouble"><summary>Speech not detected? Try these</summary>
           <ul>
             <li>Use the latest Chrome, Edge or Safari. Firefox and iPhone/iPad browsers other than Safari can't check speech.</li>
-            <li>Allow microphone access when your browser asks. If you blocked it, re-enable it in the site settings and reload.</li>
+            <li>Allow microphone access when your browser asks.</li>
             <li>Speech checking uses your browser's online speech service, so you need an internet connection.</li>
             <li>Choose the right microphone in your device's sound settings, use a quiet room, and speak one word clearly just after tapping.</li>
             <li>Hosting the page on https (rather than opening the file directly) makes microphone permission more reliable.</li>
@@ -369,6 +367,7 @@ h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;m
       </div>
     </article>
   </section>
+  <p id="voice-disclaimer" class="voice-disclaimer" aria-live="polite" hidden></p>
 </main>
 <footer class="site-footer"><span>Department of Communication Design</span><span>Learning through language</span></footer>
 
@@ -1478,7 +1477,7 @@ const GLOSSARY = {
     if(state.voiceMode==="english"){ n.textContent="Studio recording: English ("+(state.accent==="uk"?"UK":"US")+") pronunciation, matching the IPA shown."; return; }
     if(sp.lang.startsWith("en")){ n.textContent="This brand's name is English, so an English ("+(state.accent==="uk"?"UK":"US")+") voice is used."; return; }
     if(voices.length && !pickVoice(sp.lang)){ n.className="voice-note warn"; n.textContent="No "+LANG_NAMES[sp.lang]+" voice found on this device, so an English voice will be used instead. You can install one in your system's speech settings."; return; }
-    n.textContent="Spoken with "+(/^[AEIO]/.test(LANG_NAMES[sp.lang])?"an ":"a ")+LANG_NAMES[sp.lang]+" voice. It may differ from the English-style IPA shown.";
+    n.textContent="";
   }
   function renderMark(){
     const it = current(), d = isDone(state.mode,it.name), b = $("mark-button");
@@ -1525,7 +1524,7 @@ const GLOSSARY = {
     sel.addEventListener("change", ()=>{ state.country=sel.value; const vis=visible();
       if(vis.length && !vis.includes(current())) state.index.brands = MODES.brands.items.indexOf(vis[0]); renderLesson(); renderList(); }); })();
 
-  document.querySelectorAll("#accent-toggle button").forEach(b=>b.addEventListener("click", ()=>{ stopAudio(); state.accent=b.dataset.accent; save(); renderLesson(); }));
+  document.querySelectorAll("#accent-toggle button").forEach(b=>b.addEventListener("click", ()=>{ stopAudio(); state.accent=b.dataset.accent; save(); renderLesson(); const d=$("voice-disclaimer"); if(d && !d.hidden) showVoiceDisclaimer(state.accent==="uk"?"UK":"US"); }));
   document.querySelectorAll("#zh-toggle button").forEach(b=>b.addEventListener("click", ()=>{ state.zh=b.dataset.zh; save(); renderLesson(); renderList(); }));
   $("previous-button").addEventListener("click", ()=>step(-1));
   $("next-button").addEventListener("click", ()=>step(1));
@@ -1854,7 +1853,7 @@ const GLOSSARY = {
     if(btn) { btn.classList.add("playing"); u.onend=u.onerror=()=>btn.classList.remove("playing"); }
     synth.speak(u);
     const region = lang === "en-GB" ? "UK" : lang === "en-US" ? "US" : "";
-    if(region && state.mode === "terms") setMessage("Using an English ("+region+") voice. The IPA shown is the reference; browser speech may still vary slightly by voice.");
+    if(region) showVoiceDisclaimer(region);
   }
   function playEntry(it){
     if(state.mode==="brands" && state.voiceMode==="native"){ const sp = brandSpeech(it); speak(sp.text, $("speak-button"), sp.lang); return; }
@@ -1876,6 +1875,13 @@ const GLOSSARY = {
   const UA = navigator.userAgent || "";
   const isIOS = /iPad|iPhone|iPod/.test(UA) || (navigator.platform==="MacIntel" && navigator.maxTouchPoints>1);
   function setMessage(t,cls){ const p=$("practice-message"); p.textContent=t; p.className = cls||""; }
+  function showVoiceDisclaimer(region){
+    const d=$("voice-disclaimer");
+    if(!d) return;
+    if(!region){ d.hidden=true; d.textContent=""; return; }
+    d.textContent="Using an English ("+region+") voice. The IPA shown is the reference; browser speech may still vary slightly by voice.";
+    d.hidden=false;
+  }
 
   (function envHint(){
     const s=$("speech-support"); let msg="";
@@ -2138,7 +2144,7 @@ const GLOSSARY = {
     rec.lang = state.mode==="brands" && state.voiceMode==="native" ? brandSpeech(current()).lang : (state.accent==="uk"?"en-GB":"en-US");
     rec.maxAlternatives=5; rec.interimResults=true; rec.continuous=false;
     let handled=false, lastInterim="";
-    rec.onstart=()=>{ listening=true; $("record-button").classList.add("listening"); $("record-label").textContent="Listening… tap to stop"; setMessage("Listening… speak now.");
+    rec.onstart=()=>{ listening=true; $("record-button").classList.add("listening"); $("record-label").textContent="Listening… tap to stop"; setMessage("Listening… speak now."); if(rec.lang==="en-GB"||rec.lang==="en-US") showVoiceDisclaimer(rec.lang==="en-GB"?"UK":"US"); else showVoiceDisclaimer("");
       noResultTimer=setTimeout(()=>{ try{rec.stop()}catch(e){} }, 8000); };
     rec.onresult=e=>{ const r=e.results[0]; if(!r) return;
       if(r.isFinal){ handled=true; failCount=0; const alts=[...r].map(a=>a.transcript); const [cls,msg]=judge(alts,current().name); setMessage(msg,cls); }
